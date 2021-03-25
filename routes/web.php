@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NurseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [NurseController::class, 'login'])->name('auth.login');
+Route::get('/register', [NurseController::class, 'register'])->name('auth.register');
+Route::get('/dashboard', [NurseController::class, 'dashboard']);
