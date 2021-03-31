@@ -17,3 +17,8 @@ use App\Http\Controllers\NurseController;
 Route::get('/', [NurseController::class, 'login'])->name('auth.login');
 Route::get('/register', [NurseController::class, 'register'])->name('auth.register');
 Route::get('/dashboard', [NurseController::class, 'dashboard']);
+
+
+Route::get('/profile', function () {
+    return view('Nurse.profile');
+});

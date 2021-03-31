@@ -9,16 +9,16 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Edit Profile</h4>
-            <p class="card-category">Complete your profile</p>
+            <h4 class="card-title">Profil Anda</h4>
+            <p class="card-category">Data Lengkap Pegawai</p>
           </div>
           <div class="card-body">
             <form>
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Company (disabled)</label>
-                    <input type="text" class="form-control" disabled>
+                    <label class="bmd-label-floating">Company</label>
+                    <input type="text" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -97,7 +97,7 @@
         <div class="card card-profile">
           <div class="card-avatar">
             <a href="javascript:;">
-              <img class="img" src="../assets/img/faces/marc.jpg" />
+              <img class="img" src="{{ asset('img/faces/marc.jpg') }}">
             </a>
           </div>
           <div class="card-body">
