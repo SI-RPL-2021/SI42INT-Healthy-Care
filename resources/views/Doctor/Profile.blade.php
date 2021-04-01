@@ -81,7 +81,7 @@
                   <div class="form-group">
                     <label>About Me</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                      <label class="bmd-label-floating"> </label>
                       <textarea class="form-control" rows="5"></textarea>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
         <div class="card card-profile">
           <div class="card-avatar">
             <a href="javascript:;">
-              <img class="img" src="../assets/img/faces/marc.jpg" />
+              <img class="img" src="{{asset('img/faces/dokter igun.jpg')}}">
             </a>
           </div>
           <div class="card-body">
