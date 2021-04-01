@@ -26,6 +26,7 @@
 html {
     font-family: sans-serif;
     line-height: 1.15;
+    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
@@ -50,7 +51,7 @@ section {
     display: block;
 }
 
-body {
+body.template {
     margin: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
@@ -58,7 +59,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fafafa;
+    background-color: #e8e8e8;
 }
 
 [tabindex="-1"]:focus {
@@ -406,7 +407,7 @@ template {
         size: a3;
     }
 
-    body {
+    body.template {
         min-width: 992px !important;
     }
 
@@ -470,7 +471,7 @@ section {
     display: block;
 }
 
-body {
+body.template {
     margin: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
@@ -2351,12 +2352,6 @@ pre code {
 
 .form-control::placeholder {
     color: #6c757d;
-    opacity: 1;
-}
-
-.form-control:disabled,
-.form-control[readonly] {
-    background-color: #e9ecef;
     opacity: 1;
 }
 
@@ -11615,10 +11610,6 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
     color: rgba(0, 0, 0, 0.54);
 }
 
-fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
-    color: rgba(0, 0, 0, 0.26);
-}
-
 .form-check .form-check-input {
     opacity: 0;
     position: absolute;
@@ -11800,10 +11791,6 @@ fieldset[disabled] .form-check .form-check-input,
 .form-group.is-focused .form-check .form-check-label:hover,
 .form-group.is-focused .form-check .form-check-label:focus {
     color: rgba(0, 0, 0, 0.54);
-}
-
-fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
-    color: rgba(0, 0, 0, 0.26);
 }
 
 .form-check .form-check-label span {
@@ -12203,21 +12190,6 @@ fieldset[disabled] .is-focused .switch label:focus {
             rgba(210, 210, 210, 0) 1px
         ),
         linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
-}
-
-fieldset[disabled][disabled] .form-control,
-.form-control.disabled,
-.form-control:disabled,
-.form-control[disabled] {
-    background-image: linear-gradient(
-        to right,
-        #d2d2d2 0%,
-        #d2d2d2 30%,
-        transparent 30%,
-        transparent 100%
-    );
-    background-repeat: repeat-x;
-    background-size: 3px 1px;
 }
 
 .form-control.form-control-success,
@@ -13234,21 +13206,6 @@ fieldset[disabled][disabled] .has-white .form-control,
             rgba(210, 210, 210, 0) 1px
         ),
         linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
-}
-
-fieldset[disabled][disabled] .has-warning .form-control,
-.has-warning .form-control.disabled,
-.has-warning .form-control:disabled,
-.has-warning .form-control[disabled] {
-    background-image: linear-gradient(
-        to right,
-        #d2d2d2 0%,
-        #d2d2d2 30%,
-        transparent 30%,
-        transparent 100%
-    );
-    background-repeat: repeat-x;
-    background-size: 3px 1px;
 }
 
 .has-warning .form-control.form-control-success,
@@ -15192,12 +15149,12 @@ fieldset[disabled] .form-group .form-control {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-html * {
+* {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-body,
+body.template,
 h1,
 h2,
 h3,
@@ -15790,10 +15747,6 @@ a[aria-expanded="true"] .caret,
     color: rgba(0, 0, 0, 0.54);
 }
 
-fieldset[disabled] .form-group.is-focused .togglebutton label {
-    color: rgba(0, 0, 0, 0.26);
-}
-
 .togglebutton label input[type="checkbox"] {
     opacity: 0;
     width: 0;
@@ -16035,8 +15988,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     border-left: 4px solid transparent;
 }
 
-.sidebar[data-background-color="black"] {
-    background-color: #191919;
+.sidebar[data-background-color="white"] {
+    background-color: #eff8ff;
 }
 
 .sidebar .sidebar-wrapper {
@@ -16303,14 +16256,12 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar .logo p {
-    float: left;
     font-size: 20px;
     margin: 10px 10px;
     color: #fff;
-    line-height: 20px;
 }
 
-.sidebar .logo .simple-text {
+.sidebar .logo {
     text-transform: uppercase;
     padding: 5px 0px;
     display: inline-block;
@@ -16334,7 +16285,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     overflow: hidden;
 }
 
-.sidebar .logo-tim img {
+.sidebar .logo img.simple-text {
     width: 60px;
     height: 60px;
 }
@@ -16436,7 +16387,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
         z-index: 9999;
     }
 
-    .sidebar-mini .sidebar .logo a.logo-normal {
+    .sidebar-mini .sidebar .logo img.logo-normal {
         opacity: 0;
         -webkit-transform: translate3d(-25px, 0, 0);
         -moz-transform: translate3d(-25px, 0, 0);
@@ -17865,7 +17816,7 @@ thead.thead-inverse th,
     padding: 5px !important;
 }
 
-body {
+body.template {
     background-color: #eee;
     color: #3c4858;
     font-weight: 300;
@@ -19873,7 +19824,7 @@ Copyright (c) 2015 Daniel Eden
     }
 
     html,
-    body {
+    body.template {
         overflow-x: hidden;
     }
 
@@ -20023,7 +19974,7 @@ Copyright (c) 2015 Daniel Eden
         background-color: rgba(0, 0, 0, 0.45);
     }
 
-    body {
+    body.template {
         position: relative;
     }
 
