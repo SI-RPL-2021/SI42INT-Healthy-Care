@@ -9,7 +9,7 @@ class NurseController extends Controller
     public function dashboard()
     {
         return view('Nurse.dashboard');
-    }
+    } 
 
     public function profile()
     {
