@@ -22,11 +22,11 @@ class CreateNursesTable extends Migration
             $table->text('image')->nullable();
             $table->integer('age');
             $table->string('gender');
-            $table->text('address');
+            $table->string('address');
             $table->date('birth');
-            $table->text('unit');
-            $table->text('instance');
-            $table->text('religion');
+            $table->string('unit');
+            $table->string('instance');
+            $table->string('religion');
             $table->timestamps();
 
             $table->foreign('user_id')->on('users')->references('id');
