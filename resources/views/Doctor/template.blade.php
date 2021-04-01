@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">`
 
 <head>
   <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Doctor Dashboard
+    Nurse Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script src="https://kit.fontawesome.com/d54aea4276.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.min.css') }}">
+  <link href="{{ asset('css/material-dashboard.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
-<body class="">
+<body class="template">
   <div class="wrapper ">
     <div class="sidebar" data-color="azure">
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-        </a></div>
+      <div class="logo"><img class="simple-text logo-normal" src="img/healty-care.png">
+          Healty Care
+        </img></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="{{ url('Dashboard/dashboard') }}">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+            <a class="nav-link" href="{{ url('Nurse.dashboard') }}">
+              <i class="material-icons">medication</i>
+              <p>Doctor</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{ url('Dashboard/profile') }}">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
+          
           <li class="nav-item ">
             <a class="nav-link" href="">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Log Out</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
+              <i class="material-icons">assignment</i>
+              <p>Medical Record</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{ url('Dashboard/dashboard') }}">
+            <a class="nav-link" href="{{ url('Nurse.notifications') }}">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
@@ -189,10 +184,10 @@
   </div>
 
   <!--   Core JS Files   -->
-  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{{ asset('js/core/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/core/popper.min.js') }}"></script>
+  <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
+  <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <!-- Plugin for the momentJs  -->
   <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
   <!--  Plugin for Sweet Alert -->
@@ -206,19 +201,19 @@
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="/assets/js/plugins/jquery.dataTables.min.js"></script>
+  <script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}"></script>
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="/assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="/assets/js/plugins/jasny-bootstrap.min.js"></script>
+  <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}"></script>
   <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="/assets/js/plugins/fullcalendar.min.js"></script>
+  <script src="{{ asset('js/plugins/fullcalendar.min.js') }}"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="/assets/js/plugins/nouislider.min.js"></script>
+  <script src="{{ asset('js/plugins/nouislider.min.js') }}"></script>
   <!-- Library for adding dinamically elements -->
-  <script src="/assets/js/plugins/arrive.min.js"></script>
+  <script src="{{ asset('js/plugins/arrive.min.js') }}"></script>
   <!-- Chartist JS -->
-  <script src="/assets/js/plugins/chartist.min.js"></script>
+  <script src="{{ asset('js/plugins/chartist.min.js') }}"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
