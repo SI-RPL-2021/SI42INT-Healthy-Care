@@ -10,7 +10,7 @@
     Nurse Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!-- Fonts and icons -->
+  <!--     Fonts and icons     -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -29,32 +29,27 @@
         <ul class="nav">
           <li class="nav-item active  ">
             <a class="nav-link" href="{{ url('Nurse.dashboard') }}">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <i class="material-icons">medication</i>
+              <p>Doctor</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{ url('Nurse.profile') }}">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
+          
           <li class="nav-item ">
             <a class="nav-link" href="">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Log Out</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
+              <i class="material-icons">assignment</i>
+              <p>Medical Record</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -189,41 +184,40 @@
   </div>
 
   <!--   Core JS Files   -->
-  <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>
-  
+  <script src="{{ asset('js/core/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/core/popper.min.js') }}"></script>
+  <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
+  <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <!-- Plugin for the momentJs  -->
-  <script src="{{ asset('js/plugins/moment.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="{{ asset('js/plugins/sweetalert2.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/sweetalert2.js') }}"></script>
   <!-- Forms Validations Plugin -->
-  <script src="{{ asset('js/plugins/jquery.validate.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/jquery.validate.min.js') }}"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="{{ asset('js/plugins/jquery.bootstrap-wizard.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/jquery.bootstrap-wizard.js') }}"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}"></script>
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}"></script>
   <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="{{ asset('js/plugins/fullcalendar.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/fullcalendar.min.js') }}"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/nouislider.min.js') }}"></script>
   <!-- Library for adding dinamically elements -->
-  <script src="{{ asset('js/plugins/arrive.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/arrive.min.js') }}"></script>
   <!-- Chartist JS -->
-  <script src="{{ asset('js/plugins/chartist.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/chartist.min.js') }}"></script>
   <!--  Notifications Plugin    -->
-  <script src="{{ asset('js/plugins/bootstrap-notify.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }} " type="text/javascript"></script>
+  <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }}" type="text/javascript"></script>
 
 </body>
 
