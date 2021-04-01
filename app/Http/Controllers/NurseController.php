@@ -10,4 +10,8 @@ class NurseController extends Controller
     {
         return view('Nurse.dashboard');
     }
+    public function profile()
+    {
+        return view('Patient.user_profile');
+    }
 }

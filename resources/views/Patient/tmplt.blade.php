@@ -38,16 +38,9 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <ul class="top-bar-info list-inline-item pl-0 mb-0">
-                            <li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@novena.com</a></li>
-                            <li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A, New York, USA </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
                         <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
                             <a href="tel:+23-345-67890">
-                                <span>Call Now : </span>
-                                <span class="h4">823-4565-13456</span>
+                                <span>HEALTHY CARE </span>
                             </a>
                         </div>
                     </div>
@@ -112,7 +105,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <h1 class="text-capitalize mb-5 text-lg">My Profile</h1>
+                        <h1 class="text-capitalize mb-3 text-lg">My Profile</h1>
 
                         <!-- <ul class="list-inline breadcumb-nav">
             <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
@@ -129,37 +122,78 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="mt-3">
+                    <div class="mt-1">
                         <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg" class="img-thumbnail" alt="...">
                     </div>
                 </div>
 
-                <div class="col-lg-8">
-                    <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
-                        <h2 class="mb-2 title-color">PROFILE</h2>
-                        <p class="mb-4"></p>
-                        <form id="#" class="appoinment-form" method="post" action="#">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <fieldset disabled>
-                                        <div class="form-group">
-                                            <label for="disabledTextInput">Disabled input</label>
-                                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="disabledSelect">Disabled select menu</label>
-                                            <select id="disabledSelect" class="form-control">
-                                                <option>Disabled select</option>
-                                            </select>
-                                        </div>
-                                    </fieldset>
-                                    <a class="btn btn-main btn-round-full" href="confirmation.html">Make Appoinment<i class="icofont-simple-right ml-2"></i></a>
-                        </form>
-                    </div>
+
+                <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
+
+                    <h2 class="mb-2 title-color text align-center">EDIT PROFILE</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group ">
+                                <label for="inputEmail4">Full Name</label>
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="full name">
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose Image</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Phone Number</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="phone number">
+                        </div>
+                        <div class="form-group">
+                            <p> Gender:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Male
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Female
+                                </label>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="inputAddress">Username</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="username">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="inputAddress">Email</label>
+                                <input type="email" class="form-control" id="inputAddress" placeholder="email">
+                            </div>
+                            <div class="form-group">
+
+                                <label for="inputAddress">Password</label>
+                                <input type="password" class="form-control" id="inputAddress" placeholder="password">
+                            </div>
+                            <form class="form-inline">
+                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Role</label>
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                    <option selected>Patient</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Doctor</option>
+                                    <option value="3">Nurse</option>
+                                </select>
+                        </div>
+                        <a class="btn btn-main btn-round-full" href="confirmation.html">Submit<i class="icofont-simple-right ml-2"></i></a>
+                    </form>
+
                 </div>
             </div>
         </div>
         </div>
+        </div>
+
     </section>
 
 
@@ -172,12 +206,11 @@
                         <div class="logo mb-4">
                             <img src="images/logo.png" alt="" class="img-fluid">
                         </div>
-                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur veritatis eveniet distinctio possimus.</p>
+                        <p>Healthy Care, Makes You Health! </p>
 
                         <ul class="list-inline footer-socials mt-4">
                             <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -240,7 +273,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-6">
                         <div class="copyright">
-                            &copy; Copyright Reserved to <span class="text-color">Novena</span> by <a href="https://themefisher.com/" target="_blank">Themefisher</a>
+                            &copy; Copyright <span class="text-color">Group</span> C</a>
                         </div>
                     </div>
                     <div class="col-lg-6">
