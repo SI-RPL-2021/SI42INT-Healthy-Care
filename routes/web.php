@@ -5,7 +5,7 @@ use App\Http\Controllers\NurseController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\DoctorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +35,11 @@ Route::prefix('admin/')->group(function() {
 
 });
 
+Route::prefix('doctor/')->group(function() {
+    Route::get('profile', [DoctorController::class, 'profile'])->name('doctor.profile');   
+});
 // Test
 Route::get('/1', function () {
     return view('Admin.profile');
 });
+
