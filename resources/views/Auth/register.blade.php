@@ -23,7 +23,7 @@
                 <input type="username" class="form-control @error('username') is-invalid border-danger @enderror" id="inputUsername" name="username" value="{{old('username')}}" placeholder="Username">
                 <label for="inputUsername">Username</label>
                 @error('username')
-                    <span class="invalid-feedback mb-2" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
@@ -32,7 +32,7 @@
                 <input type="email" class="form-control mb-2 @error('email') is-invalid border-danger @enderror" id="inputEmail" name="email" value="{{old('email')}}" placeholder="name@example.com">
                 <label for="inputEmail">Alamat Email</label>
                 @error('email')
-                    <span class="invalid-feedback mb-2" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror        
@@ -41,7 +41,7 @@
                 <input type="password" class="form-control mb-0 @error('password') is-invalid border-danger @enderror" id="inputPassword" name="password" placeholder="Password">
                 <label for="inputPassword">Password</label>
                 @error('password')
-                    <span class="invalid-feedback mb-2" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
@@ -50,7 +50,7 @@
                 <input type="password" class="form-control mb-0 @error('confirm') is-invalid border-danger @enderror" id="inputConfirm" name="confirm" placeholder="Confirm Password">
                 <label for="inputConfirm">Confirm Password</label>
                 @error('confirm')
-                    <span class="invalid-feedback mb-2" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror

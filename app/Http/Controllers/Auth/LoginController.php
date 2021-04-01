@@ -49,8 +49,7 @@ class LoginController extends Controller
         return view('Auth.login');
     }
 
-    public function login(Request $request)
-    {
+    public function login(Request $request) {
         $rules = [
             'email' => 'required|email',
             'password' => 'required|min:8'
@@ -82,10 +81,7 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->username == ''){
-                            return redirect()->route('');
-                        }
-                        return redirect()->route('admin.dashboard');
+                        return redirect()->route('admin.profile');
                     } else {
                         return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
                     }
@@ -108,9 +104,6 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->username == ''){
-                            return redirect()->route('');
-                        }
                         return redirect()->route('');
                     } else {
                         return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
@@ -134,9 +127,6 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->username == ''){
-                            return redirect()->route('');
-                        }
                         return redirect()->route('nurse.dashboard');
                     } else {
                         return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
@@ -171,5 +161,10 @@ class LoginController extends Controller
                 return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
             }
         }
+    }
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect()->route('loginpage');
     }
 }

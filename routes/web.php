@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminController;
 Route::prefix('/')->group(function() {
     Route::get('login', [LoginController::class, 'loginpage'])->name('loginpage');
     Route::post('login', [LoginController::class, 'login'])->name('login');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('register', [RegisterController::class, 'registerpage'])->name('registerpage');
     Route::post('register', [RegisterController::class, 'register'])->name('register');
 });
@@ -29,4 +30,12 @@ Route::prefix('nurse/')->group(function() {
 
 Route::prefix('admin/')->group(function() {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('users', [AdminController::class, 'userManagement'])->name('admin.userManagement');
+
+});
+
+// Test
+Route::get('/1', function () {
+    return view('Admin.profile');
 });

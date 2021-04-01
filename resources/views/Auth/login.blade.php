@@ -11,16 +11,16 @@
                 <input type="email" class="form-control @error('email') is-invalid border-danger @enderror" id="inputEmail" name="email" value="{{old('email')}}" placeholder="name@example.com">
                 <label for="inputEmail">Alamat Email</label>
                 @error('email')
-                    <span class="invalid-feedback" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control @error('password') is-invalid border-danger @enderror" id="inputPassword" name="password" placeholder="Password">
+                <input type="password" class="form-control mb-0 @error('password') is-invalid border-danger @enderror" id="inputPassword" name="password" placeholder="Password">
                 <label for="inputPassword">Password</label>
                 @error('password')
-                    <span class="invalid-feedback" role="alert">
+                    <span class="invalid-feedback mb-2 mt-0" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror

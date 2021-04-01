@@ -1,4 +1,4 @@
-@extends('Nurse/template')
+@extends('Nurse/layout/template')
 
 @section('content')
 
