@@ -22,8 +22,11 @@ Route::prefix('/')->group(function() {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('register', [RegisterController::class, 'registerpage'])->name('registerpage');
     Route::post('register', [RegisterController::class, 'register'])->name('register');
+    
 });
-
+Route::prefix('patient/')->group(function() {
+    Route::get('profile', [NurseController::class, 'profile'])->name('nurse.dashboard');
+});
 Route::prefix('nurse/')->group(function() {
     Route::get('dashboard', [NurseController::class, 'dashboard'])->name('nurse.dashboard');
 });
