@@ -20,53 +20,41 @@
 </head>
 
 <body class="template">
-  <div class="wrapper ">
+  <div class="wrapper">
     <div class="sidebar" data-color="azure">
-      <div class="logo"><img class="simple-text logo-normal" src="img/healty-care.png">
+      <div class="logo"><img class="simple-text logo-normal" src="{{ asset('img/healty-care.png') }}">
           Healty Care
         </img></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="{{ url('Nurse.dashboard') }}">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('nurse.dashboard') }}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{ url('Nurse.profile') }}">
+            <a class="nav-link" href="{{ route('nurse.profile') }}">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <i class="material-icons">assignment</i>
+              <p>Medical Record</p>
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <i class="material-icons">single_bed</i>
+              <p>Kamar Inap</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{ url('Nurse.notifications') }}">
+            <a class="nav-link" href="{{ route('nurse.notif') }}">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
             </a>
           </li>
         </ul>
@@ -74,7 +62,7 @@
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;">Dashboard</a>
@@ -140,34 +128,20 @@
       </nav>
       <!-- End of Navbar -->
 
+      <!-- Content Start Here -->
       <div class="content">
         <div class="container-fluid">
-
-          @yield('content')
-  
+        @yield('content')
         </div>
       </div>
+        
+      <!-- Content End Here -->
 
       <!-- Footer Start Here -->
       <footer class="footer">
         <div class="container-fluid">
         <nav class="float-left">
           <ul>
-            <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a href="https://creative-tim.com/presentation">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
-            </li>
             <li>
               <a href="https://www.creative-tim.com/license">
                 Licenses
@@ -180,7 +154,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            <a href="" target="_blank">Group C</a> for a better web.
           </div>
         </div>
       </footer>
