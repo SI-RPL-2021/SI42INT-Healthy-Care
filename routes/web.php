@@ -17,14 +17,11 @@ use App\Http\Controllers\NurseController;
 Route::get('/', [NurseController::class, 'login'])->name('auth.login');
 Route::get('/register', [NurseController::class, 'register'])->name('auth.register');
 Route::get('/dashboard', [NurseController::class, 'dashboard']);
-<<<<<<< HEAD
+
 Route::get('/profileDoc', function () {
     return view('Doctor.Profile');
     });
-=======
-
 
 Route::get('/profile', function () {
     return view('Nurse.profile');
 });
->>>>>>> 0e54ad220a043fee9e0eab95f2f8b79332f5b786
