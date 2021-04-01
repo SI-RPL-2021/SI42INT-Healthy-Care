@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>
+            Admin Dashboard
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+        <!-- Fonts and icons -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://kit.fontawesome.com/d54aea4276.js" crossorigin="anonymous"></script>
+        <!-- CSS Files -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.min.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">  
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sidebar" data-color="azure">
+                <div class="logo" align="center">
+                    Healty Care
+                </div>
+
+                <!-- Sidebar -->
+                @yield('sidebar')
+
+            </div>
+            <div class="main-panel">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-wrapper">
+
+                            @yield('nametag')
+                        
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end">
+                            <form class="navbar-form">
+                                <div class="input-group">
+                                    <input type="text" value="" class="form-control" placeholder="Search...">
+                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                        <i class="material-icons">search</i>
+                                        <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                            </form>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">person</i>
+                                        <p class="d-lg-none d-md-block">
+                                            Account
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                        <a class="dropdown-item" href="#">Settings</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        @yield('content')
+
+                    </div>
+                </div>
+                <!-- Footer Start Here -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="copyright float-right">
+                            Group C &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer Ends Here -->
+            </div>
+        </div>
+
+        <!-- Core JS Files -->
+        <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>
+        
+        <!-- Plugin for the momentJs -->
+        <script src="{{ asset('js/plugins/moment.min.js') }}" type="text/javascript"></script>
+        <!-- Plugin for Sweet Alert -->
+        <script src="{{ asset('js/plugins/sweetalert2.js') }}" type="text/javascript"></script>
+        <!-- Forms Validations Plugin -->
+        <script src="{{ asset('js/plugins/jquery.validate.min.js') }}" type="text/javascript"></script>
+        <!-- Plugin for the Wizard -->
+        <script src="{{ asset('js/plugins/jquery.bootstrap-wizard.js') }}" type="text/javascript"></script>
+        <!-- Plugin for Select -->
+        <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}" type="text/javascript"></script>
+        <!-- Plugin for the DateTimePicker -->
+        <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
+        <!-- DataTables.net Plugin -->
+        <script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+        <!-- Plugin for Tags -->
+        <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}" type="text/javascript"></script>
+        <!-- Plugin for Fileupload -->
+        <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}" type="text/javascript"></script>
+        <!-- Full Calendar Plugin -->
+        <script src="{{ asset('js/plugins/fullcalendar.min.js') }}" type="text/javascript"></script>
+        <!-- Plugin for the Sliders -->
+        <script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+        <!-- Library for adding dinamically elements -->
+        <script src="{{ asset('js/plugins/arrive.min.js') }}" type="text/javascript"></script>
+        <!-- Chartist JS -->
+        <script src="{{ asset('js/plugins/chartist.min.js') }}" type="text/javascript"></script>
+        <!-- Notifications Plugin -->
+        <script src="{{ asset('js/plugins/bootstrap-notify.js') }}" type="text/javascript"></script>
+        <!-- Control Center for Material Dashboard: parallax effects -->
+        <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }} " type="text/javascript"></script>
+        <!-- Datatable -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+            $('#example').DataTable();
+            } );
+        </script>
+    </body>
+</html>

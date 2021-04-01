@@ -8,7 +8,7 @@
     Nurse Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
+  <!-- Fonts and icons -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -189,40 +189,41 @@
   </div>
 
   <!--   Core JS Files   -->
-  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>
+  
   <!-- Plugin for the momentJs  -->
-  <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
+  <script src="{{ asset('js/plugins/moment.min.js') }}" type="text/javascript"></script>
   <!--  Plugin for Sweet Alert -->
-  <script src="{{ asset('js/plugins/sweetalert2.js') }}"></script>
+  <script src="{{ asset('js/plugins/sweetalert2.js') }}" type="text/javascript"></script>
   <!-- Forms Validations Plugin -->
-  <script src="{{ asset('js/plugins/jquery.validate.min.js') }}"></script>
+  <script src="{{ asset('js/plugins/jquery.validate.min.js') }}" type="text/javascript"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="{{ asset('js/plugins/jquery.bootstrap-wizard.js') }}"></script>
+  <script src="{{ asset('js/plugins/jquery.bootstrap-wizard.js') }}" type="text/javascript"></script>
   <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}"></script>
+  <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}" type="text/javascript"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}"></script>
+  <script src="{{ asset('js/plugins/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="/assets/js/plugins/jquery.dataTables.min.js"></script>
+  <script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}" type="text/javascript"></script>
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="/assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}" type="text/javascript"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-  <script src="/assets/js/plugins/jasny-bootstrap.min.js"></script>
+  <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}" type="text/javascript"></script>
   <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="/assets/js/plugins/fullcalendar.min.js"></script>
+  <script src="{{ asset('js/plugins/fullcalendar.min.js') }}" type="text/javascript"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="/assets/js/plugins/nouislider.min.js"></script>
+  <script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
   <!-- Library for adding dinamically elements -->
-  <script src="/assets/js/plugins/arrive.min.js"></script>
+  <script src="{{ asset('js/plugins/arrive.min.js') }}" type="text/javascript"></script>
   <!-- Chartist JS -->
-  <script src="/assets/js/plugins/chartist.min.js"></script>
+  <script src="{{ asset('js/plugins/chartist.min.js') }}" type="text/javascript"></script>
   <!--  Notifications Plugin    -->
-  <script src="{{ asset('js/plugins/bootstrap-notify.js') }}"></script>
+  <script src="{{ asset('js/plugins/bootstrap-notify.js') }}" type="text/javascript"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }} " type="text/javascript"></script>
 
 </body>
 
