@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 class NurseController extends Controller
 {
-    public function login()
-    {
-        return view('Auth.login');
-    }
-
-    public function register()
-    {
-        return view('Auth.register');
-    }
-
     public function dashboard()
     {
         return view('Nurse.dashboard');
+    }
+
+    public function profile()
+    {
+        return view('Nurse.profile');
+    }
+
+    public function notif()
+    {
+        return view('Nurse.notifications');
     }
 }

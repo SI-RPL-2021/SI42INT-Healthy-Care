@@ -1,10 +1,8 @@
-@extends('Nurse/template')
+@extends('Nurse/layout/template')
 
 @section('content')
 
 <!-- Content Start Here -->
-<div class="content">
-  <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
         <div class="card">
@@ -15,63 +13,63 @@
           <div class="card-body">
             <form>
               <div class="form-group row">
-                <label for="nama_lengkap" class="col-sm-3 col-form-label">Nama Lengkap</label>
+                <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="nama_lengkap" value="(Nama Lengkap)">
+                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="" name="full_name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="email" value="(mail@example.com)">
+                  <input type="text" readonly class="form-control-plaintext" id="email" value=" Tahun" name="email">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="jabatan" class="col-sm-3 col-form-label">Jabatan</label>
+                <label for="position" class="col-sm-3 col-form-label">Jabatan</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="jabatan" value="(Jabatan)">
+                  <input type="text" readonly class="form-control-plaintext" id="position" value="" name="position">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="umur" class="col-sm-3 col-form-label">Umur</label>
+                <label for="Age" class="col-sm-3 col-form-label">Age</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="umur" value="(Umur)">
+                  <input type="number" readonly class="form-control-plaintext" id="age" value="" name="age">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="gender" class="col-sm-3 col-form-label">Gender</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="gender" value="(Gender)">
+                  <input type="text" readonly class="form-control-plaintext" id="gender" value="" name="gender">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+                <label for="address" class="col-sm-3 col-form-label">Alamat</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="alamat" value="(Alamat)">
+                  <input type="text" readonly class="form-control-plaintext" id="address" value="" name="address">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="ttl" class="col-sm-3 col-form-label">Tempat, Tanggal Lahir</label>
+                <label for="birth" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="ttl" value="(Tempat, Tanggal Lahir)">
+                  <input type="date" readonly class="form-control-plaintext" id="birth" value="" name="birth">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="unit" class="col-sm-3 col-form-label">Unit Kerja</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="unit" value="(Unit Kerja)">
+                  <input type="text" readonly class="form-control-plaintext" id="unit" value="" name="unit">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="instansi" class="col-sm-3 col-form-label">Instansi Kerja</label>
+                <label for="instance" class="col-sm-3 col-form-label">Instansi Kerja</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="instansi" value="(Instansi Kerja)">
+                  <input type="text" readonly class="form-control-plaintext" id="instance" value="" name="instance">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="agama" class="col-sm-3 col-form-label">Agama</label>
+                <label for="religion" class="col-sm-3 col-form-label">Agama</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="agama" value="(Agama)">
+                  <input type="text" readonly class="form-control-plaintext" id="religion" value="" name="religion">
                 </div>
               </div>
             </form>
@@ -97,7 +95,6 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 <!-- Content Ends Here -->
 @endsection
