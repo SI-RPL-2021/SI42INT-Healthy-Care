@@ -15,64 +15,40 @@
           <div class="card-body">
             <form>
               <div class="row">
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Company (disabled)</label>
-                    <input type="text" class="form-control" disabled>
-                  </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Username</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $doctor2->username }}" disabled>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Email address</label>
-                    <input type="email" class="form-control">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Fist Name</label>
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Last Name</label>
-                    <input type="text" class="form-control">
+                    <input type="email" class="form-control" id="inputEmail" name="Email" value="{{ $doctor2->email }}" disabled>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Adress</label>
-                    <input type="text" class="form-control">
+                    <label class="bmd-label-floating">Full Name</label>
+                    <input type="text" class="form-control" id="inputFullname" name="FullName" value="{{ $doctor->full_name }}" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" name="Address" value="{{ $doctor->address }}" disabled>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">City</label>
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Country</label>
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Postal Code</label>
-                    <input type="text" class="form-control">
+                    <label class="bmd-label-floating">Specialist</label>
+                    <input type="text" class="form-control" id="inputCity" name="City" value="{{ $doctor->specialist }}" disabled>
                   </div>
                 </div>
               </div>

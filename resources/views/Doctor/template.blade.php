@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Nurse Dashboard
+    Doctor Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -33,7 +33,7 @@
               <p>Doctor</p>
             </a>
           </li>
-          
+
           <li class="nav-item ">
             <a class="nav-link" href="">
               <i class="material-icons">content_paste</i>
@@ -139,7 +139,7 @@
         <div class="container-fluid">
 
           @yield('content')
-  
+
         </div>
       </div>
 
