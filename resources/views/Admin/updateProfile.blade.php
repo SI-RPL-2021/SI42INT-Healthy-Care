@@ -43,16 +43,17 @@
                 <div class="card">
                     <div class="card-header card-header-primary">
                         <h4 class="card-title">User Profile</h4>
-                        <p class="card-category">Your profile</p>
+                        <p class="card-category">Edit Your Profile</p>
                     </div>
                     <div class="card-body">
-                        <form class="form" enctype="multipart/form-data">
+                    <form class="form" enctype="multipart/form-data" action="{{route('admin.postProfile')}}" method="POST">
                             @csrf
+                            <input type="text" class="form-control" name="id" value="{{ $admin->id }}" hidden>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
-                                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $admin->full_name }}" disabled>
+                                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $admin->full_name }}">
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +61,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="username" class="bmd-label-floating ml-1">Username</label>
-                                        <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $admin2->username }}" disabled>
+                                        <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $admin2->username }}">
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +69,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email" class="bmd-label-floating ml-1">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $admin2->email }}" disabled>
+                                        <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $admin2->email }}">
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +77,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
-                                        <input type="text" class="form-control" id="inputPhone" name="Phone" value="{{ $admin->phone_number }}" disabled>
+                                        <input type="text" class="form-control" id="inputPhone" name="Phone" value="{{ $admin->phone_number }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -86,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="updateProfile/{{ $admin->id }}" class="btn btn-primary pull-right mt-3">Update Profile</a>
+                            <button type="submit" class="btn btn-primary pull-right mt-3">Save</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

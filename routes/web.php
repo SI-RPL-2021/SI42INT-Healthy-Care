@@ -31,12 +31,14 @@ Route::prefix('nurse/')->group(function() {
 Route::prefix('admin/')->group(function() {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('updateProfile/{id}', [AdminController::class, 'updateProfilePage'])->name('admin.UpdateProfile');
+    Route::post('updateProfile', [AdminController::class, 'updateProfile'])->name('admin.postProfile');
     Route::get('users', [AdminController::class, 'userManagement'])->name('admin.userManagement');
 
 });
 
 Route::prefix('doctor/')->group(function() {
-    Route::get('profile', [DoctorController::class, 'profile'])->name('doctor.profile');   
+    Route::get('profile', [DoctorController::class, 'profile'])->name('doctor.profile');
 });
 // Test
 Route::get('/1', function () {
