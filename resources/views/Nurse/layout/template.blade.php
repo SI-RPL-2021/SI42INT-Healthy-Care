@@ -27,7 +27,7 @@
         </img></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="{{ route('nurse.dashboard') }}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -198,6 +198,19 @@
   <script src="{{ asset('js/plugins/bootstrap-notify.js') }}" type="text/javascript"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }} " type="text/javascript"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
+      $('.nav-item').on("click", function(){
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
+      });
+
+    });
+  </script>
 
 </body>
 

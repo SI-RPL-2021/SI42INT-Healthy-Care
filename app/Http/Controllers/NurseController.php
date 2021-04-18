@@ -16,12 +16,10 @@ class NurseController extends Controller
 
     public function profile()
     {
-        
-         $id = Session::get('id');
-         $data = Nurse::find($id);
-         $data2 = User::find($id);
-         return view('Nurse.profile', ['Nurse' => $data, 'Nurse2' => $data2]);
-        
+        $id = Session::get('id');
+        $data = Nurse::find($id);
+        $data2 = User::find($id);
+        return view('Nurse.profile', ['Nurse' => $data, 'Nurse2' => $data2]);
     }
 
     public function notif()
