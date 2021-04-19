@@ -104,7 +104,7 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        return redirect()->route('');
+                        return redirect()->route('doctor.profile');
                     } else {
                         return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
                     }
