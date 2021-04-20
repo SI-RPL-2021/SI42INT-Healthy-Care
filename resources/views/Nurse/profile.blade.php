@@ -1,7 +1,43 @@
 @extends('Nurse/layout/template')
 
-@section('content')
+@section('sidebar')
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('nurse.dashboard') }}">
+            <i class="material-icons">dashboard</i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('nurse.profile') }}">
+            <i class="material-icons">person</i>
+            <p>User Profile</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="">
+            <i class="material-icons">assignment</i>
+            <p>Medical Record</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="">
+            <i class="material-icons">single_bed</i>
+            <p>Kamar Inap</p>
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ route('nurse.notif') }}">
+            <i class="material-icons">notifications</i>
+            <p>Notifications</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+@endsection
 
+@section('content')
 <!-- Content Start Here -->
     <div class="row">
       <div class="col-md-8">
@@ -11,17 +47,19 @@
             <p class="card-category">Data Lengkap Pegawai</p>
           </div>
           <div class="card-body">
-            <form>
+          
+            <form class="form" enctype="multipart/form-data">
+            @csrf
               <div class="form-group row">
                 <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="" name="full_name">
+                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="{{ $Nurse->full_name }}" name="full_name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="email" value=" Tahun" name="email">
+                  <input type="text" readonly class="form-control-plaintext" id="email" value="{{ $Nurse->email }}" name="email">
                 </div>
               </div>
               <div class="form-group row">
@@ -72,10 +110,12 @@
                   <input type="text" readonly class="form-control-plaintext" id="religion" value="" name="religion">
                 </div>
               </div>
+              
             </form>
           </div>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="card card-profile">
           <div class="card-avatar">
