@@ -2,7 +2,6 @@
 <html lang="zxx">
 
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
     <meta name="author" content="themefisher.com">
@@ -31,19 +30,12 @@
 </head>
 
 <body id="top">
-
-
     <header>
         <div class="header-top-bar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-                            <a href="tel:+23-345-67890">
-                                <span>HEALTHY CARE </span>
-                            </a>
-                        </div>
-                    </div>
+            <div class="ml-5">
+                <div class="text-lg-left top-right-bar mt-2 mt-lg-0">
+                    <img class="img" src="img/healty-care.png" alt="Healty Care Logo">
+                    <span><b>HEALTHY CARE</b></span>
                 </div>
             </div>
         </div>
@@ -52,7 +44,6 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="images/logo.png" alt="" class="img-fluid">
                 </a>
-
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icofont-navigation-menu"></span>
                 </button>
@@ -64,30 +55,12 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="department.html">Departments</a></li>
-                                <li><a class="dropdown-item" href="department-single.html">Department Single</a></li>
-                            </ul>
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
                                 <li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
                                 <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
                                 <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
-
-                                <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -97,105 +70,8 @@
         </nav>
     </header>
 
-
-
-    <section class="page-title bg-1">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block text-center">
-                        <h1 class="text-capitalize mb-3 text-lg">My Profile</h1>
-
-                        <!-- <ul class="list-inline breadcumb-nav">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-            <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
-          </ul> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="appoinment section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="mt-1">
-                        <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/09/100k-ai-faces-6.jpg" class="img-thumbnail" alt="...">
-                    </div>
-                </div>
-
-
-                <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
-
-                    <h2 class="mb-2 title-color text align-center">EDIT PROFILE</h2>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group ">
-                                <label for="inputEmail4">Full Name</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="full name">
-                            </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile">Choose Image</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Phone Number</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="phone number">
-                        </div>
-                        <div class="form-group">
-                            <p> Gender:</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Male
-                                </label>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Female
-                                </label>
-                            </div>
-                            <div class="form-group">
-
-                                <label for="inputAddress">Username</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="username">
-                            </div>
-                            <div class="form-group">
-
-                                <label for="inputAddress">Email</label>
-                                <input type="email" class="form-control" id="inputAddress" placeholder="email">
-                            </div>
-                            <div class="form-group">
-
-                                <label for="inputAddress">Password</label>
-                                <input type="password" class="form-control" id="inputAddress" placeholder="password">
-                            </div>
-                            <form class="form-inline">
-                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Role</label>
-                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                    <option selected>Patient</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Doctor</option>
-                                    <option value="3">Nurse</option>
-                                </select>
-                        </div>
-                        <a class="btn btn-main btn-round-full" href="confirmation.html">Submit<i class="icofont-simple-right ml-2"></i></a>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-
-    </section>
-
+    <!-- Content -->
+    @yield('content')
 
     <!-- footer Start -->
     <footer class="footer section gray-bg">
@@ -207,19 +83,16 @@
                             <img src="images/logo.png" alt="" class="img-fluid">
                         </div>
                         <p>Healthy Care, Makes You Health! </p>
-
                         <ul class="list-inline footer-socials mt-4">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.facebook.com"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com"><i class="icofont-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="widget mb-5 mb-lg-0">
                         <h4 class="text-capitalize mb-3">Department</h4>
                         <div class="divider mb-4"></div>
-
                         <ul class="list-unstyled footer-menu lh-35">
                             <li><a href="#">Surgery </a></li>
                             <li><a href="#">Wome's Health</a></li>
@@ -234,7 +107,6 @@
                     <div class="widget mb-5 mb-lg-0">
                         <h4 class="text-capitalize mb-3">Support</h4>
                         <div class="divider mb-4"></div>
-
                         <ul class="list-unstyled footer-menu lh-35">
                             <li><a href="#">Terms & Conditions</a></li>
                             <li><a href="#">Privacy Policy</a></li>
@@ -249,15 +121,13 @@
                     <div class="widget widget-contact mb-5 mb-lg-0">
                         <h4 class="text-capitalize mb-3">Get in Touch</h4>
                         <div class="divider mb-4"></div>
-
                         <div class="footer-contact-block mb-4">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-email mr-3"></i>
                                 <span class="h6 mb-0">Support Available for 24/7</span>
                             </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
+                            <h4 class="mt-2"><a href="tel:+23-345-67890">GroupC@email.com</a></h4>
                         </div>
-
                         <div class="footer-contact-block">
                             <div class="icon d-flex align-items-center">
                                 <i class="icofont-support mr-3"></i>
@@ -273,15 +143,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-6">
                         <div class="copyright">
-                            &copy; Copyright <span class="text-color">Group</span> C</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
-                            <form action="#" class="subscribe">
-                                <input type="text" class="form-control" placeholder="Your Email address">
-                                <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
-                            </form>
+                            Group C &copy; <span class="text-color">2021</span>
                         </div>
                     </div>
                 </div>
@@ -296,10 +158,10 @@
             </div>
         </div>
     </footer>
+
     <!-- 
     Essential Scripts
     =====================================-->
-
 
     <!-- Main jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.js')}}"></script>
@@ -320,7 +182,5 @@
 
     <script src="{{ asset('js/script.js')}}"></script>
     <script src="{{ asset('js/contact.js')}}"></script>
-
 </body>
-
 </html>

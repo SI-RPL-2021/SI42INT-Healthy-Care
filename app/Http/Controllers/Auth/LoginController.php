@@ -81,7 +81,7 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        return redirect()->route('admin.profile');
+                        return redirect()->route('admin.dashboard');
                     } else {
                         return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
                     }
@@ -150,8 +150,8 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->username == ''){
-                            return redirect()->route('');
+                        if($data->fullname == ''){
+                            return redirect()->route('patient.profile');
                         }
                         return redirect()->route('');
                     } else {
