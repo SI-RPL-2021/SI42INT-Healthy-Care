@@ -10,7 +10,8 @@ use App\Models\User;
 class AdminController extends Controller
 {
     public function dashboard() {
-        return view('Admin.dashboard');
+        $count = User::all()->count();
+        return view('Admin.dashboard', compact('count'));
     }
 
     public function profile() {
@@ -21,6 +22,12 @@ class AdminController extends Controller
     }
 
     public function userManagement() {
-        return view('Admin.userManagement');
+        $count = User::all()->count();
+        $data = User::all();
+        return view('Admin.userManagement', ['account' => $data], compact('count'));
+    }
+
+    public function history() {
+        return view('Admin\history');
     }
 }
