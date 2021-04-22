@@ -58,12 +58,12 @@
                         <p class="card-category">Transaction list</p>
                     </div>
                     <div class="card-body">
-                        <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <table id="example" class="table table-striped content-centered" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
+                                    {{-- <th>Email</th>
+                                    <th>Role</th> --}}
                                     <th>Create at</th>
                                     <th>Update at</th>
                                     <th>Action</th>
@@ -77,20 +77,22 @@
                                     <td>{{ $data->role }}</td>
                                     <td>{{ $data->created_at }}</td>
                                     <td>{{ $data->updated_at }}</td>
-                                    <td></td>
+                                    <td><a href="account/delete/{{ $data->id }}" class="btn btn-danger btn-icon-split ml-2">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                            <span class="text">Delete</span>
+                                        </a>
+                                        <a href="" class="btn btn-primary btn-icon-split ml-2">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-pen"></i>
+                                            </span>
+                                            <span class="text">Edit</span>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach --}}
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Create at</th>
-                                    <th>Update at</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

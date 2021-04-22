@@ -30,19 +30,19 @@
                     @csrf               
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
-                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="" disabled>
+                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $patient->full_name }}" disabled>
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" id="inputUsername" name="username" value="" disabled>
+                        <input type="text" class="form-control" id="inputUsername" name="username" value="{{ $patient2->username }}" disabled>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" value="" disabled>
+                        <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $patient2->email }}" disabled>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone number</label>
-                        <input type="text" class="form-control" id="inputPhone" name="phone" value="" disabled>
+                        <input type="text" class="form-control" id="inputPhone" name="phone" value="{{ $patient->phone_number }}" disabled>
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="10" disabled></textarea>
+                        <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="5" disabled>{{ $patient->address }}</textarea>
                     </div>
                     <a class="btn btn-main btn-round-full mt-2" href="confirmation.html">Update Profile<i class="icofont-simple-right ml-2"></i></a>
                 </form>
