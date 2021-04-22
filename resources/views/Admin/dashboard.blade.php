@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
                 <p>History Transaction</p>
             </a>
@@ -39,11 +39,37 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <p class="card-category">Total Accounts</p>
+                        <h1 class="card-title m-2">{{ $count }}</h1>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">library_books</i>
+                        </div>
+                        <p class="card-category">Total Transctions</p>
+                        <h1 class="card-title m-2"></h1>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title">User Profile</h4>
-                        <p class="card-category">Your profile</p>
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title">Notification</h4>
+                        <p class="card-category"></p>
                     </div>
                     <div class="card-body">
 

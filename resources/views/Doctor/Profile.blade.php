@@ -1,39 +1,40 @@
 @extends('Doctor/layout/template')
 @section('sidebar')
-  <div class="sidebar-wrapper">
+<div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('doctor.dashboard') }}">
-          <i class="material-icons">dashboard</i>
-          <p>Dashboard</p>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('doctor.profile') }}">
-          <i class="material-icons">person</i>
-          <p>User Profile</p>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="">
-          <i class="material-icons">assignment</i>
-          <p>Medical Record</p>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="{{ route('doctor.notif') }}">
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
-        </a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="">
+                <i class="material-icons">person</i>
+                <p>My Profile</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="material-icons">content_paste</i>
+                <p>Medical Record</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="material-icons">notifications</i>
+                <p>Notification</p>
+            </a>
+        </li>
     </ul>
-  </div>
+</div>
 @endsection
 
 @section('nametag')
-    <a class="navbar-brand" href="javascript:;"><B>User Profile</B></a>
+    <a class="navbar-brand" href="javascript:;"><B>PROFILE</B></a>
 @endsection
 
+@section('content')
 <!-- Content Start Here -->
 @section('content')
 <div class="content">
@@ -42,63 +43,70 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Profile Anda</h4>
-            <p class="card-category">Data Lengkap Pegawai</p>
+            <h4 class="card-title">User Profile</h4>
+            <p class="card-category">Your profile</p>
           </div>
           <div class="card-body">
-
             <form class="form" enctype="multipart/form-data">
-            @csrf
-            
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Username</label>
-                    <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $doctor2->username }}">
+              @csrf
+              <div class="row mt-2">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
+                          <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $doctor->full_name }}" disabled>
+                      </div>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail" name="Email" value="{{ $doctor2->email }}">
-                  </div>
-                </div>
               </div>
-              <div class="row">
+              <div class="row mt-2">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="username" class="bmd-label-floating ml-1">Username</label>
+                          <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $doctor2->username }}" disabled>
+                      </div>
+                  </div>
+              </div>
+              <div class="row mt-2">
                 <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Full Name</label>
-                    <input type="text" class="form-control" id="inputFullname" name="FullName" value="{{ $doctor->full_name }}">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" name="Address" value="{{ $doctor->address }}">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Specialist</label>
-                    <input type="text" class="form-control" id="inputCity" name="City" value="{{ $doctor->specialist }}">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>About Me</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> </label>
-                      <textarea class="form-control" rows="5"></textarea>
+                      <label for="specialist" class="bmd-label-floating ml-1">Specialist</label>
+                      <select class="form-select form-control" id="inputSpecialist" name="specialist" disabled>
+                        <option>{{ $doctor->specialist }}</option>
+                      </select>
                     </div>
-                  </div>
                 </div>
               </div>
+              <div class="row mt-2">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="email" class="bmd-label-floating ml-1">Email</label>
+                          <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $doctor2->email }}" disabled>
+                      </div>
+                  </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="address" class="bmd-label-floating ml-1">Address</label>
+                      <textarea class="form-control" id="inputAddress" name="address" cols="30" rows="5" disabled>{{ $doctor->address }}</textarea>
+                    </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
+                          <input type="text" class="form-control" id="inputPhone" name="Phone" value="{{ $doctor->phone_number }}" disabled>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="role" class="bmd-label-floating ml-1">Role</label>
+                          <input type="text" class="form-control" id="inputRole" name="role" value="{{ $doctor2->role }}" disabled>
+                      </div>
+                  </div>
+              </div>
+              <a href="" class="btn btn-primary pull-right mt-3">Update Profile</a>
+              <div class="clearfix"></div>
             </form>
           </div>
         </div>
@@ -107,12 +115,10 @@
       <div class="col-md-4">
         <div class="card card-profile">
           <div class="card-avatar">
-            <a href="javascript:;">
-              <img class="img" src="{{ asset('img/faces/card-profile1-square.jpg') }}">
-            </a>
+            <img class="img" src="{{ asset('img/faces/dokter igun.jpg') }}">
           </div>
           <div class="card-body">
-            <h6 class="card-category text-gray">{{ $doctor->role }}</h6>
+            <h6 class="card-category text-gray">{{ $doctor2->role }}</h6>
             <h4 class="card-title">{{ $doctor->full_name }}</h4>
             <p class="card-description">
               Spesialis: {{ $doctor->specialist }}

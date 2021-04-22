@@ -13,8 +13,8 @@ class Nurse extends Model
     protected $primarykey = 'user_id';
 
     protected $fillable = [
-        'image', 'fullname', 'phone_number', 'position', 
-        'email', 'image', 'age', 'gender', 'address', 'birth', 'unit',
+        'image', 'full_name', 'phone_number', 'position',
+        'age', 'gender', 'address', 'birth', 'unit',
         'instance', 'religion'
     ];
 }

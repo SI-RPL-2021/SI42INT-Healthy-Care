@@ -18,12 +18,12 @@ class CreateNursesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->enum('position', ['']);
             $table->string('full_name');
-            $table->string('email');
             $table->text('image')->nullable();
+            $table->string('phone_number');
             $table->integer('age');
-            $table->string('gender');
-            $table->string('address');
             $table->date('birth');
+            $table->enum('gender', ['male', 'female']);
+            $table->string('address');
             $table->string('unit');
             $table->string('instance');
             $table->string('religion');

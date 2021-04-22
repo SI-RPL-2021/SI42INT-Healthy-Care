@@ -14,10 +14,9 @@
         <script src="https://kit.fontawesome.com/d54aea4276.js" crossorigin="anonymous"></script>
         <!-- CSS Files -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/material-dashboard.min.css') }}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">  
     </head>
     <body>
         <div class="wrapper">
@@ -134,12 +133,15 @@
         <script src="{{ asset('js/material-dashboard.js?v=2.1.2') }} " type="text/javascript"></script>
         <!-- Datatable -->
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
         <script>
             $(document).ready(function() {
-            $('#example').DataTable();
-            });
+                $('#example').DataTable( {
+                    "scrollX": true
+                } );
+                $('.dataTables_length').addClass('bs-select');
+            } );
         </script>
     </body>
 </html>

@@ -12,9 +12,10 @@ class DoctorController extends Controller
     public function dashboard() {
         return view('Doctor.dashboard');
     }
-    public function Profile() {
+    
+    public function profile() {
         $id = Session::get('id');
-        $data = Doctor::find($id);
+        $data = Doctor::where('user_id', $id)->first();
         $data2 = User::find($id);
         return view('Doctor.profile', ['doctor' => $data, 'doctor2' => $data2]);
     }
