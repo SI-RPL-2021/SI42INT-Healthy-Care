@@ -34,7 +34,7 @@
         <div class="header-top-bar">
             <div class="ml-5">
                 <div class="text-lg-left top-right-bar mt-2 mt-lg-0">
-                    <img class="img" src="img/healty-care.png" alt="Healty Care Logo">
+                    <img class="img-fluid mr-2" src="img/healty-care.png" alt="Healty Care Logo" width="50 px">
                     <span><b>HEALTHY CARE</b></span>
                 </div>
             </div>
@@ -53,17 +53,17 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
-                                <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
+                                <li><a class="dropdown-item" href="">Doctors</a></li>
+                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
+                                <li><a class="dropdown-item" href="">Appoinment</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
                     </ul>
                 </div>
             </div>

@@ -36,6 +36,25 @@
 
 <!-- Content Start Here -->
 @section('content')
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="material-icons">close</i>
+    </button>
+    <span>
+        <strong>{{ $message }}</strong>    
+    </span>
+</div>
+@elseif ($message = Session::get('failed'))
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="material-icons">close</i>
+        </button>
+        <span>
+            <strong>{{ $message }}</strong>    
+        </span>
+    </div>
+@endif
 <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
         <div class="card-header card-header-warning card-header-icon">
@@ -53,12 +72,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title">User Account</h4>
-                        <p class="card-category">Account list</p>
+                    <div class="card-header card-header-primary row">
+                        <div class="col-md-6">
+                            <h4 class="card-title">User Account</h4>
+                            <p class="card-category">Account list</p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <a href="{{ route('admin.addAccount') }}" class="btn btn-success btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                                <span class="text">Tambah Akun Baru</span>
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <table id="example" class="table table-striped content-centered" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Username</th>
@@ -77,20 +106,22 @@
                                     <td>{{ $data->role }}</td>
                                     <td>{{ $data->created_at }}</td>
                                     <td>{{ $data->updated_at }}</td>
-                                    <td></td>
+                                    <td><a href="account/delete/{{ $data->id }}" class="btn btn-danger btn-icon-split ml-2">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                            <span class="text">Delete</span>
+                                        </a>
+                                        <a href="" class="btn btn-primary btn-icon-split ml-2">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-pen"></i>
+                                            </span>
+                                            <span class="text">Edit</span>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th>Create at</th>
-                                    <th>Update at</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                 </div>

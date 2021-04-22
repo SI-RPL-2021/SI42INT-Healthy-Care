@@ -11,7 +11,7 @@ class PatientController extends Controller
 {
     public function profile() {
         $id = Session::get('id');
-        $data = Patient::find($id);
+        $data = Patient::where('user_id', $id)->first();
         $data2 = User::find($id);
         return view('Patient.profile', ['patient' => $data, 'patient2' => $data2]);
     }

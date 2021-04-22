@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NurseController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\NurseController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::prefix('patient/')->group(function() {
 
 Route::prefix('nurse/')->group(function() {
     Route::get('dashboard', [NurseController::class, 'dashboard'])->name('nurse.dashboard');
+    Route::get('profile', [NurseController::class, 'profile'])->name('nurse.profile');
+    Route::get('notifications', [NurseController::class, 'notif'])->name('nurse.notif');
 });
 
 Route::prefix('admin/')->group(function() {
@@ -39,6 +42,9 @@ Route::prefix('admin/')->group(function() {
     Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
     Route::get('users', [AdminController::class, 'userManagement'])->name('admin.userManagement');
     Route::get('history', [AdminController::class, 'history'])->name('admin.history');
+    Route::get('addAccount', [AdminController::class, 'addAccountPage'])->name('admin.addAccountpage');
+    Route::post('addAccount', [AdminController::class, 'addAccount'])->name('admin.addAccount');
+    Route::get('account/delete/{id}', [AdminController::class, 'deleteAccount'])->name('admin.deleteAccount');
 });
 
 Route::prefix('doctor/')->group(function() {
@@ -46,6 +52,6 @@ Route::prefix('doctor/')->group(function() {
 });
 // Test
 Route::get('/1', function () {
-    return view('Admin.profile');
+    return view('Admin.addAccount');
 });
 
