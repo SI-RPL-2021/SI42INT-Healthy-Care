@@ -90,4 +90,12 @@ class AdminController extends Controller
         }
         return redirect()->back()->with(['failed' => 'Data is not deleted']);    
     }
+
+    public function editDoctor() {
+        return view('Admin.editDoctor');
+    }
+
+    public function editNurse() {
+        return view('Admin.editNurse');
+    }
 }

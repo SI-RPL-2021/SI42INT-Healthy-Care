@@ -36,6 +36,7 @@
 
 @section('content')
 <!-- Content Start Here -->
+@section('content')
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -110,6 +111,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="card card-profile">
           <div class="card-avatar">
@@ -119,13 +121,12 @@
             <h6 class="card-category text-gray">{{ $doctor2->role }}</h6>
             <h4 class="card-title">{{ $doctor->full_name }}</h4>
             <p class="card-description">
-              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+              Spesialis: {{ $doctor->specialist }}
+              <br>
+              1901023500098
             </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Content Ends Here -->
 @endsection

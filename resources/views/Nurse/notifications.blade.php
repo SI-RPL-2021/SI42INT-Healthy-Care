@@ -37,6 +37,10 @@
     </div>
 @endsection
 
+@section('nametag')
+    <a class="navbar-brand" href="javascript:;"><B>Notification</B></a>
+@endsection
+
 @section('content')
     <div class="card">
       <div class="card-header card-header-primary">
