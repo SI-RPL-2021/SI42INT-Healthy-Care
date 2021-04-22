@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Nurse;
 use App\Models\User;
 
-
 class NurseController extends Controller
 {
     public function dashboard()

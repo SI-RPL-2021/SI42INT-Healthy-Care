@@ -37,6 +37,10 @@
   </div>
 @endsection
 
+@section('nametag')
+  <a class="navbar-brand" href="javascript:;"><b>Dashboard</b></a>
+@endsection
+
 @section('content')
 <!-- Content Start Here -->
   <div class="row">

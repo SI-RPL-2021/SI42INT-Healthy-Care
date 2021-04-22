@@ -1,37 +1,37 @@
-@extends('Doctor/layout/template')
+@extends('Admin/layout/template')
 @section('sidebar')
-  <div class="sidebar-wrapper">
+<div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('doctor.dashboard') }}">
-          <i class="material-icons">dashboard</i>
-          <p>Dashboard</p>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('doctor.profile') }}">
-          <i class="material-icons">person</i>
-          <p>User Profile</p>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="">
-          <i class="material-icons">assignment</i>
-          <p>Medical Record</p>
-        </a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="{{ route('doctor.notif') }}">
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
-        </a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.dashboard') }}">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.profile') }}">
+                <i class="material-icons">person</i>
+                <p>My Profile</p>
+            </a>
+        </li>
+        <li class="nav-item  active">
+            <a class="nav-link" href="">
+                <i class="material-icons">content_paste</i>
+                <p>User Management</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="material-icons">library_books</i>
+                <p>History Transaction</p>
+            </a>
+        </li>
     </ul>
-  </div>
+</div>
 @endsection
 
 @section('nametag')
-    <a class="navbar-brand" href="javascript:;"><B>User Profile</B></a>
+    <a class="navbar-brand" href="javascript:;"><B>USER MANAGEMENT</B></a>
 @endsection
 
 <!-- Content Start Here -->
@@ -42,25 +42,23 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Profile Anda</h4>
-            <p class="card-category">Data Lengkap Pegawai</p>
+            <h4 class="card-title">Edit Profile</h4>
+            <p class="card-category">Silahkan ubah data yang diperlukan</p>
           </div>
           <div class="card-body">
 
-            <form class="form" enctype="multipart/form-data">
-            @csrf
-            
+            <form class="">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Username</label>
-                    <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $doctor2->username }}">
+                    <input type="text" class="form-control" id="inputUsername" name="Username" value="">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail" name="Email" value="{{ $doctor2->email }}">
+                    <input type="email" class="form-control" id="inputEmail" name="Email" value="">
                   </div>
                 </div>
               </div>
@@ -68,7 +66,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Full Name</label>
-                    <input type="text" class="form-control" id="inputFullname" name="FullName" value="{{ $doctor->full_name }}">
+                    <input type="text" class="form-control" id="inputFullname" name="FullName" value="">
                   </div>
                 </div>
               </div>
@@ -76,7 +74,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" name="Address" value="{{ $doctor->address }}">
+                    <input type="text" class="form-control" id="inputAddress" name="Address" value="">
                   </div>
                 </div>
               </div>
@@ -84,17 +82,16 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Specialist</label>
-                    <input type="text" class="form-control" id="inputCity" name="City" value="{{ $doctor->specialist }}">
+                    <input type="text" class="form-control" id="inputCity" name="City" value="">
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col">
                   <div class="form-group">
-                    <label>About Me</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> </label>
-                      <textarea class="form-control" rows="5"></textarea>
+                      <button type="button" class="btn btn-warning btn-md btn-block">SAVE</button>
+                      <button type="button" class="btn btn-danger btn-md btn-block">DELETE</button>
                     </div>
                   </div>
                 </div>
@@ -112,10 +109,10 @@
             </a>
           </div>
           <div class="card-body">
-            <h6 class="card-category text-gray">{{ $doctor->role }}</h6>
-            <h4 class="card-title">{{ $doctor->full_name }}</h4>
+            <h6 class="card-category text-gray"></h6>
+            <h4 class="card-title"></h4>
             <p class="card-description">
-              Spesialis: {{ $doctor->specialist }}
+              Spesialis: 
               <br>
               1901023500098
             </p>

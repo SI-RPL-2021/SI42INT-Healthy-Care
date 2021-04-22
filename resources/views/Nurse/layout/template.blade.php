@@ -25,14 +25,18 @@
       <div class="logo"><img class="simple-text logo-normal" src="{{ asset('img/healty-care.png') }}">
           Healty Care
         </img></div>
+
         @yield('sidebar')
+
     </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+
+            @yield('nametag')
+            
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -83,10 +87,9 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
                 </div>
               </li>
             </ul>
@@ -98,7 +101,9 @@
       <!-- Content Start Here -->
       <div class="content">
         <div class="container-fluid">
+
         @yield('content')
+
         </div>
       </div>
         

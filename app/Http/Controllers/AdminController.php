@@ -23,4 +23,12 @@ class AdminController extends Controller
     public function userManagement() {
         return view('Admin.userManagement');
     }
+
+    public function editDoctor() {
+        return view('Admin.editDoctor');
+    }
+
+    public function editNurse() {
+        return view('Admin.editNurse');
+    }
 }

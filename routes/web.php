@@ -34,6 +34,8 @@ Route::prefix('admin/')->group(function() {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
     Route::get('users', [AdminController::class, 'userManagement'])->name('admin.userManagement');
+    Route::get('doctor', [AdminController::class, 'editDoctor'])->name('admin.editDoctor');
+    Route::get('nurse', [AdminController::class, 'editNurse'])->name('admin.editNurse');
 });
 
 Route::prefix('doctor/')->group(function() {
