@@ -31,7 +31,7 @@
 @endsection
 
 @section('nametag')
-    <a class="navbar-brand" href="javascript:;"><B>PROFILE</B></a>
+<a class="navbar-brand" href="javascript:;"><B>PROFILE</B></a>
 @endsection
 
 <!-- Content Start Here -->
@@ -46,14 +46,16 @@
                         <p class="card-category">Edit Your Profile</p>
                     </div>
                     <div class="card-body">
-                    <form class="form" enctype="multipart/form-data" action="{{route('admin.postProfile')}}" method="POST">
+                        <form class="form" enctype="multipart/form-data" action="{{route('admin.postProfile')}}"
+                            method="POST">
                             @csrf
                             <input type="text" class="form-control" name="id" value="{{ $admin->id }}" hidden>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
-                                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $admin->full_name }}">
+                                        <input type="text" class="form-control" id="inputFullname" name="fullname"
+                                            value="{{ $admin->full_name }}">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +63,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="username" class="bmd-label-floating ml-1">Username</label>
-                                        <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $admin2->username }}">
+                                        <input type="text" class="form-control" id="inputUsername" name="Username"
+                                            value="{{ $admin2->username }}">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +72,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email" class="bmd-label-floating ml-1">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $admin2->email }}">
+                                        <input type="email" class="form-control" id="inputEmail" name="email"
+                                            value="{{ $admin2->email }}">
                                     </div>
                                 </div>
                             </div>
@@ -77,13 +81,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
-                                        <input type="text" class="form-control" id="inputPhone" name="Phone" value="{{ $admin->phone_number }}">
+                                        <input type="text" class="form-control" id="inputPhone" name="Phone"
+                                            value="{{ $admin->phone_number }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="role" class="bmd-label-floating ml-1">Role</label>
-                                        <input type="text" class="form-control" id="inputRole" name="role" value="{{ $admin2->role }}" disabled>
+                                        <input type="text" class="form-control" id="inputRole" name="role"
+                                            value="{{ $admin2->role }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +108,8 @@
                         <h6 class="card-category text-gray">{{ $admin2->role }}</h6>
                         <h4 class="card-title">{{ $admin->full_name }}</h4>
                         <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I
+                            love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                         </p>
                     </div>
                 </div>
