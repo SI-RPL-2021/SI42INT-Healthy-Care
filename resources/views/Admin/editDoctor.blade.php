@@ -47,7 +47,9 @@
           </div>
           <div class="card-body">
 
-            <form class="">
+          <form class="form" enctype="multipart/form-data">
+            @csrf
+            
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
