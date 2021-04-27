@@ -10,7 +10,6 @@ class Nurse extends Model
     use HasFactory;
 
     protected $table = 'nurses';
-    protected $primarykey = 'user_id';
 
     protected $fillable = [
         'image', 'full_name', 'phone_number', 'position',

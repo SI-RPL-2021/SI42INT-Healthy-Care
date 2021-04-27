@@ -14,14 +14,14 @@
                 <p>My Profile</p>
             </a>
         </li>
-        <li class="nav-item  active">
+        <li class="nav-item active">
             <a class="nav-link" href="">
                 <i class="material-icons">content_paste</i>
                 <p>User Management</p>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
                 <p>History Transaction</p>
             </a>
@@ -45,70 +45,82 @@
           </div>
           <div class="card-body">
           
-            <form class="form" enctype="multipart/form-data">
-            @csrf
+            <form method="POST" action="updateAccount/{{ $Nurse->id }}" enctype="multipart/form-data">
+              @csrf
+              @method('POST')
 
               <div class="form-group row">
                 <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="{{ $Nurse->full_name }}" name="full_name">
-                </div>"
+                <div class="col">
+                  <input type="text" class="form-control" id="full_name" value="{{ $Nurse->full_name }}" name="full_name">
+                </div>
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="email" value="{{ $Nurse2->email }}" name="email">
+                <div class="col">
+                  <input type="text" class="form-control" id="email" value="{{ $Nurse2->email }}" name="email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="email" class="col-sm-3 col-form-label">Username</label>
+                <div class="col">
+                  <input type="text" class="form-control" id="username" value="{{ $Nurse2->username }}" name="username">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="position" class="col-sm-3 col-form-label">Jabatan</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="position" value="" name="position">
+                <div class="col">
+                  <input type="text" class="form-control" id="position" value="{{ $Nurse->position }}" name="position">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="Age" class="col-sm-3 col-form-label">Age</label>
-                <div class="col-sm-6">
-                  <input type="number" readonly class="form-control-plaintext" id="age" value="" name="age">
+                <div class="col">
+                  <input type="number" class="form-control" id="age" value="{{ $Nurse->age }}" name="age">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="gender" class="col-sm-3 col-form-label">Gender</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="gender" value="" name="gender">
+                <div class="col">
+                  <input type="text" class="form-control" id="gender" value="{{ $Nurse->gender }}" name="gender">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="address" class="col-sm-3 col-form-label">Alamat</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="address" value="" name="address">
+                <div class="col">
+                  <input type="text" class="form-control" id="address" value="{{ $Nurse->address }}" name="address">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="birth" class="col-sm-3 col-form-label">Tanggal Lahir</label>
-                <div class="col-sm-6">
-                  <input type="date" readonly class="form-control-plaintext" id="birth" value="" name="birth">
+                <div class="col">
+                  <input type="date" class="form-control" id="birth" value="{{ $Nurse->birth }}" name="birth">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="unit" class="col-sm-3 col-form-label">Unit Kerja</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="unit" value="" name="unit">
+                <div class="col">
+                  <input type="text" class="form-control" id="unit" value="{{ $Nurse->unit }}" name="unit">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="instance" class="col-sm-3 col-form-label">Instansi Kerja</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="instance" value="" name="instance">
+                <div class="col">
+                  <input type="text" class="form-control" id="instance" value="{{ $Nurse->instance }}" name="instance">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="religion" class="col-sm-3 col-form-label">Agama</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="religion" value="" name="religion">
+                <div class="col">
+                  <input type="text" class="form-control" id="religion" value="{{ $Nurse->religion }}" name="religion">
                 </div>
               </div>
 
+              <div class="form-group row">
+                <button type="submit" value="submit" class="btn btn-primary btn-md">SAVE</button>
+                <a href="{{ route('admin.userManagement') }}" class="btn btn-danger btn-md">CANCEL</a>
+              </div>
+              
             </form>
           </div>
         </div>

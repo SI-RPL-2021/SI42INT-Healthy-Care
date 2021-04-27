@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
+use App\Models\Doctor;
+use App\Models\Nurse;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -82,6 +84,69 @@ class AdminController extends Controller
         return view('Admin\history');
     }
 
+    public function editAccount($id) 
+    {
+        $data2 = User::find($id);
+        
+        if($data2->role == "doctor") {
+            $data = Doctor::where('user_id', $id)->first();
+            return view('Admin.editDoctor', ['doctor' => $data, 'doctor2' => $data2]);
+        } else if($data2->role == "nurse") {
+            $data = Nurse::where('user_id', $id)->first();
+            return view('Admin.editNurse', ['Nurse' => $data, 'Nurse2' => $data2]);
+        }
+    }
+
+    public function updateAccount(Request $request, $id) 
+    {
+        $this->validate($request, [
+            'full_name'    => $request->full_name,
+            'username'     => $request->username,
+            'email'        => $request->email
+        ]);
+        
+        $user = User::find($id);
+
+        if($user->role == "doctor") {
+            $data = Doctor::where('user_id', $id)
+                        ->update([
+                            'full_name'    => $request->full_name,
+                            'username'     => $request->username,
+                            'specialist'   => $request->specialist,
+                            'email'        => $request->email,
+                            'address'      => $request->address,
+                            'phone_number' => $request->phone_number
+                        ]);
+            
+        } else if($user->role == "nurse") {
+            $data = Nurse::where('user_id', $id)
+                        ->update([
+                            'full_name'    => $request->full_name,
+                            'email'        => $request->email,
+                            'username'     => $request->username,
+                            'position'     => $request->position,
+                            'age'          => $request->age,
+                            'gender'       => $request->gender,
+                            'address'      => $request->address,
+                            'birth'        => $request->birth,
+                            'unit'         => $request->unit,
+                            'instance'     => $request->instance,
+                            'religion'     => $request->religion
+                        ]);
+        }
+
+        $user->save();
+
+        return redirect()->route('admin.userManagement', ['doctor' => $data, 'doctor2' => $user, 'Nurse' => $data, 'Nurse2' => $user])
+                         ->with(['success' => 'Account has been updated successfully']);
+        
+    }
+
+    public function updateNurse(Request $request, $id) 
+    {
+        // 
+    }
+
     public function deleteAccount($id) {
         $data = User::find($id);
         if(Session::get('id') != $id) {
@@ -89,13 +154,5 @@ class AdminController extends Controller
             return redirect()->route('admin.userManagement')->with(['success' => 'Data has been deleted']);    
         }
         return redirect()->back()->with(['failed' => 'Data is not deleted']);    
-    }
-
-    public function editDoctor() {
-        return view('Admin.editDoctor');
-    }
-
-    public function editNurse() {
-        return view('Admin.editNurse');
     }
 }

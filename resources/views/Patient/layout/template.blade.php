@@ -34,7 +34,7 @@
         <div class="header-top-bar">
             <div class="ml-5">
                 <div class="text-lg-left top-right-bar mt-2 mt-lg-0">
-                    <img class="img-fluid mr-2" src="img/healty-care.png" alt="Healty Care Logo" width="50 px">
+                    <img class="img-fluid mr-2" src="{{ asset('img/healty-care.png') }}" alt="Healty Care Logo" width="50 px">
                     <span><b>HEALTHY CARE</b></span>
                 </div>
             </div>

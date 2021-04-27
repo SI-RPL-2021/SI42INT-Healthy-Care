@@ -105,8 +105,6 @@
                       </div>
                   </div>
               </div>
-              <a href="" class="btn btn-primary pull-right mt-3">Update Profile</a>
-              <div class="clearfix"></div>
             </form>
           </div>
         </div>

@@ -29,6 +29,8 @@ Route::prefix('/')->group(function() {
 
 Route::prefix('patient/')->group(function() {
     Route::get('profile', [PatientController::class, 'profile'])->name('patient.profile');
+    Route::get('edit/{id}', [PatientController::class, 'edit'])->name('patient.edit');
+    Route::post('update/{id}', [PatientController::class, 'update'])->name('patient.update');
 });
 
 Route::prefix('nurse/')->group(function() {
@@ -44,6 +46,10 @@ Route::prefix('admin/')->group(function() {
     Route::get('history', [AdminController::class, 'history'])->name('admin.history');
     Route::get('addAccount', [AdminController::class, 'addAccountPage'])->name('admin.addAccountpage');
     Route::post('addAccount', [AdminController::class, 'addAccount'])->name('admin.addAccount');
+    // update account
+    Route::get('editAccount/{id}', [AdminController::class, 'editAccount'])->name('admin.editAccount');
+    Route::post('updateAccount/{id}', [AdminController::class, 'updateAccount'])->name('admin.updateAccount');
+
     Route::get('account/delete/{id}', [AdminController::class, 'deleteAccount'])->name('admin.deleteAccount');
 });
 
