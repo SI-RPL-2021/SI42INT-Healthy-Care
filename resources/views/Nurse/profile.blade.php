@@ -37,12 +37,12 @@
 @endsection
 
 @section('nametag')
-    <a class="navbar-brand" href="javascript:;"><B>USER PROFILE</B></a>
+    <a class="navbar-brand" href="javascript:;"><B>PROFILE</B></a>
 @endsection
 
 @section('content')
 <!-- Content Start Here -->
-    <div class="row"> 
+    <div class="row">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
@@ -51,8 +51,7 @@
           </div>
           <div class="card-body">
             <form class="form" enctype="multipart/form-data">
-              @csrf
-
+            @csrf
               <div class="form-group row">
                 <label for="fullname" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col-sm-6">
