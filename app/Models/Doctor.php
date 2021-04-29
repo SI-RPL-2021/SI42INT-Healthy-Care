@@ -14,4 +14,9 @@ class Doctor extends Model
     protected $fillable = [
         'image', 'full_name', 'specialist', 'address'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

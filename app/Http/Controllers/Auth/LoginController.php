@@ -145,7 +145,7 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->fullname == ''){
+                        if($data->full_name == ''){
                             return redirect()->route('patient.profile');
                         }
                         return redirect()->route('patient.profile');

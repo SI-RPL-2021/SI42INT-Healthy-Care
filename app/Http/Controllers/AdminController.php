@@ -90,61 +90,75 @@ class AdminController extends Controller
         
         if($data2->role == "doctor") {
             $data = Doctor::where('user_id', $id)->first();
-            return view('Admin.editDoctor', ['doctor' => $data, 'doctor2' => $data2]);
+            return view('Doctor.editProfile', compact('data2', 'data'));
         } else if($data2->role == "nurse") {
             $data = Nurse::where('user_id', $id)->first();
-            return view('Admin.editNurse', ['Nurse' => $data, 'Nurse2' => $data2]);
+            return view('Nurse.editProfile', compact('data2', 'data'));
         }
     }
 
     public function updateAccount(Request $request, $id) 
     {
-        $this->validate($request, [
-            'full_name'    => $request->full_name,
-            'username'     => $request->username,
-            'email'        => $request->email
-        ]);
-        
+        // $rules = [
+        //     'fullname' => 'required',
+        //     'username' => 'required|max:20',
+        //     'email'    => 'required'
+        // ];
+
+        // $message = [
+        //     'fullname.required' => 'Username is required',
+        //     'username.required' => 'Username is required',
+        //     'username.max'      => 'Username maximum 20 characters'
+        // ];
+
+        // $validator = Validator::make($request->all(), $rules, $message);
+
+        // if($validator->fails()) {
+        //     return redirect()->back()->withErrors($validator)->withInput($request->all());
+        // }
+
         $user = User::find($id);
 
         if($user->role == "doctor") {
-            $data = Doctor::where('user_id', $id)
-                        ->update([
-                            'full_name'    => $request->full_name,
-                            'username'     => $request->username,
-                            'specialist'   => $request->specialist,
-                            'email'        => $request->email,
-                            'address'      => $request->address,
-                            'phone_number' => $request->phone_number
-                        ]);
             
+            $user->doctor()->full_name    = $request->fullname;
+            $user->username               = $request->Username;
+            $user->doctor()->specialist   = $request->specialist;
+            $user->email                  = $request->email;
+            $user->doctor()->address      = $request->address;
+            $user->doctor()->phone_number = $request->Phone;
+
+            $save = $user->save();
+
+            if($save) {
+                return redirect()->route('admin.userManagement')->with(['success' => 'Account has been updated successfully']);;
+            } else {
+                return redirect()->route('admin.userManagement')->with(['failed' => 'account was not updated successfully']);
+            }
+
         } else if($user->role == "nurse") {
-            $data = Nurse::where('user_id', $id)
-                        ->update([
-                            'full_name'    => $request->full_name,
-                            'email'        => $request->email,
-                            'username'     => $request->username,
-                            'position'     => $request->position,
-                            'age'          => $request->age,
-                            'gender'       => $request->gender,
-                            'address'      => $request->address,
-                            'birth'        => $request->birth,
-                            'unit'         => $request->unit,
-                            'instance'     => $request->instance,
-                            'religion'     => $request->religion
-                        ]);
+
+            $user->nurse()->full_name    = $request->full_name;
+            $user->email                 = $request->email;
+            $user->username              = $request->username;
+            $user->nurse()->position     = $request->position;
+            $user->nurse()->age          = $request->age;
+            $user->nurse()->gender       = $request->gender;
+            $user->nurse()->address      = $request->address;
+            $user->nurse()->birth        = $request->birth;
+            $user->nurse()->unit         = $request->unit;
+            $user->nurse()->instance     = $request->instance;
+            $user->nurse()->religion     = $request->religion;
+
+            $save = $user->save();
+
+            if($save) {
+                return redirect()->route('admin.userManagement')->with(['success' => 'Account has been updated successfully']);;
+            } else {
+                return redirect()->route('admin.userManagement')->with(['failed' => 'account was not updated successfully']);
+            }
         }
-
-        $user->save();
-
-        return redirect()->route('admin.userManagement', ['doctor' => $data, 'doctor2' => $user, 'Nurse' => $data, 'Nurse2' => $user])
-                         ->with(['success' => 'Account has been updated successfully']);
         
-    }
-
-    public function updateNurse(Request $request, $id) 
-    {
-        // 
     }
 
     public function deleteAccount($id) {

@@ -20,28 +20,34 @@ class PatientController extends Controller
     public function edit($id)
     {
         $edit2 = User::find($id);
+        error_log($edit2->id);
         $edit = Patient::where('user_id', $id)->first();
-        return view('Patient.editProfile', ['patient' => $edit, 'patient2' => $edit2]);
+        return view('Patient.editProfile', compact('edit2', 'edit'));
     }
 
     public function update(Request $request, $id) 
     {
-        $this->validate($request, [
-            'full_name'    => $request->full_name,
-            'username'     => $request->username,
-            'email'        => $request->email
-        ]);
+        $user = User::find($id);
 
-        User::where('id', $user_id)
-            ->update([
-                'full_name'    => $request->full_name,
-                'username'     => $request->username,
-                'email'        => $request->email,
-                'phone_number' => $request->phone_number,
-                'gender'       => $request->gender,
-                'address'      => $request->address
-            ]);
+        $user->patient()->full_name    = $request->fullname;
+        $user->username                = $request->username;
+        $user->email                   = $request->email;
+        $user->patient()->phone_number = $request->phone;
+        $user->patient()->gender       = $request->gender;
+        $user->patient()->address      = $request->address;
 
-        return redirect()->route('patient.profile')->with(['success' => 'Account has been updated successfully']);
+        $user->save();
+
+        if($save) {
+            return redirect()->route('patient.profile')->with(['success' => 'Account has been updated successfully']);;
+        } else {
+            return redirect()->route('patient.profile')->with(['failed' => 'account was not updated successfully']);
+        }
+    }
+
+    public function exampleMethod($data1, $data2)
+    {
+        $hasil = $data1 + $data2;
+        return $hasil;
     }
 }

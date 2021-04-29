@@ -45,74 +45,73 @@
           </div>
           <div class="card-body">
           
-            <form method="POST" action="updateAccount/{{ $Nurse->id }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.updateAccount', $data2->id) }}" enctype="multipart/form-data">
               @csrf
-              @method('POST')
 
               <div class="form-group row">
                 <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="full_name" value="{{ $Nurse->full_name }}" name="full_name">
+                  <input type="text" class="form-control" id="full_name" value="{{ $data->full_name }}" name="full_name">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="email" value="{{ $Nurse2->email }}" name="email">
+                  <input type="text" class="form-control" id="email" value="{{ $data2->email }}" name="email">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Username</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="username" value="{{ $Nurse2->username }}" name="username">
+                  <input type="text" class="form-control" id="username" value="{{ $data2->username }}" name="username">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="position" class="col-sm-3 col-form-label">Jabatan</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="position" value="{{ $Nurse->position }}" name="position">
+                  <input type="text" class="form-control" id="position" value="{{ $data->position }}" name="position">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="Age" class="col-sm-3 col-form-label">Age</label>
                 <div class="col">
-                  <input type="number" class="form-control" id="age" value="{{ $Nurse->age }}" name="age">
+                  <input type="number" class="form-control" id="age" value="{{ $data->age }}" name="age">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="gender" class="col-sm-3 col-form-label">Gender</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="gender" value="{{ $Nurse->gender }}" name="gender">
+                  <input type="text" class="form-control" id="gender" value="{{ $data->gender }}" name="gender">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="address" class="col-sm-3 col-form-label">Alamat</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="address" value="{{ $Nurse->address }}" name="address">
+                  <input type="text" class="form-control" id="address" value="{{ $data->address }}" name="address">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="birth" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                 <div class="col">
-                  <input type="date" class="form-control" id="birth" value="{{ $Nurse->birth }}" name="birth">
+                  <input type="date" class="form-control" id="birth" value="{{ $data->birth }}" name="birth">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="unit" class="col-sm-3 col-form-label">Unit Kerja</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="unit" value="{{ $Nurse->unit }}" name="unit">
+                  <input type="text" class="form-control" id="unit" value="{{ $data->unit }}" name="unit">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="instance" class="col-sm-3 col-form-label">Instansi Kerja</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="instance" value="{{ $Nurse->instance }}" name="instance">
+                  <input type="text" class="form-control" id="instance" value="{{ $data->instance }}" name="instance">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="religion" class="col-sm-3 col-form-label">Agama</label>
                 <div class="col">
-                  <input type="text" class="form-control" id="religion" value="{{ $Nurse->religion }}" name="religion">
+                  <input type="text" class="form-control" id="religion" value="{{ $data->religion }}" name="religion">
                 </div>
               </div>
 
@@ -134,10 +133,10 @@
             </a>
           </div>
           <div class="card-body">
-            <h6 class="card-category text-gray">{{ $Nurse2->role }}</h6>
-            <h4 class="card-title">{{ $Nurse->full_name }}</h4>
+            <h6 class="card-category text-gray">{{ $data2->role }}</h6>
+            <h4 class="card-title">{{ $data->full_name }}</h4>
             <p class="card-description">
-              No.Telp: {{ $Nurse->phone_number }}
+              No.Telp: {{ $data->phone_number }}
               <br>
               1901023500098
             </p>
