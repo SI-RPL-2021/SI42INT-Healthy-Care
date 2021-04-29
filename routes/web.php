@@ -16,6 +16,10 @@ use App\Http\Controllers\DoctorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+    return view('Auth.login');
+});
+
 Route::prefix('/')->group(function() {
     Route::get('login', [LoginController::class, 'loginpage'])->name('loginpage');
     Route::post('login', [LoginController::class, 'login'])->name('login');
