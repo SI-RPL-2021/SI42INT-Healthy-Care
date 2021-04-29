@@ -19,6 +19,7 @@ class CreateDoctorsTable extends Migration
             $table->string('full_name');
             $table->enum('specialist', ['Spesialis anak', 'Spesialis Jantung', 'Spesialis Paru', 'Spesialis Tulang', 'Spesialis Penyakit Dalam']);
             $table->text('image')->nullable();
+            $table->string('phone_number');
             $table->text('address');
             $table->timestamps();
 

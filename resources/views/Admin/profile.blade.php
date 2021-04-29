@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
                 <p>Hitory Transaction</p>
             </a>
@@ -48,46 +48,46 @@
                     <div class="card-body">
                         <form class="form" enctype="multipart/form-data">
                             @csrf
-                            <div class="row mt-3">
+                            <div class="row mt-2">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
                                         <input type="text" class="form-control" id="inputFullname" name="fullname"
-                                            value="{{ $admin->full_name }}" disabled>
+                                            value="{{ $admin->admin->full_name }}" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-2">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="username" class="bmd-label-floating ml-1">Username</label>
                                         <input type="text" class="form-control" id="inputUsername" name="Username"
-                                            value="{{ $admin2->username }}" disabled>
+                                            value="{{ $admin->username }}" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-2">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="email" class="bmd-label-floating ml-1">Email</label>
                                         <input type="email" class="form-control" id="inputEmail" name="email"
-                                            value="{{ $admin2->email }}" disabled>
+                                            value="{{ $admin->email }}" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-2">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
                                         <input type="text" class="form-control" id="inputPhone" name="Phone"
-                                            value="{{ $admin->phone_number }}" disabled>
+                                            value="{{ $admin->admin->phone_number }}" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="role" class="bmd-label-floating ml-1">Role</label>
                                         <input type="text" class="form-control" id="inputRole" name="role"
-                                            value="{{ $admin2->role }}" disabled>
+                                            value="{{ $admin->role }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -101,11 +101,11 @@
             <div class="col-md-4">
                 <div class="card card-profile">
                     <div class="card-avatar">
-                        <img class="img" src="img/healty-care.png" alt="Healty Care Logo" width="100" height="100">
+                        <img class="img" src="{{ asset('img/healty-care.png') }}" alt="Healty Care Logo">
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">{{ $admin2->role }}</h6>
-                        <h4 class="card-title">{{ $admin->full_name }}</h4>
+                        <h6 class="card-category text-gray">{{ $admin->role }}</h6>
+                        <h4 class="card-title">{{ $admin->admin->full_name }}</h4>
                         <p class="card-description">
                             Don't be scared of the truth because we need to restart the human foundation in truth And I
                             love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...

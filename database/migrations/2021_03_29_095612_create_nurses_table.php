@@ -19,7 +19,14 @@ class CreateNursesTable extends Migration
             $table->enum('position', ['']);
             $table->string('full_name');
             $table->text('image')->nullable();
-            $table->text('address');
+            $table->string('phone_number');
+            $table->integer('age');
+            $table->date('birth');
+            $table->enum('gender', ['male', 'female']);
+            $table->string('address');
+            $table->string('unit');
+            $table->string('instance');
+            $table->string('religion');
             $table->timestamps();
 
             $table->foreign('user_id')->on('users')->references('id');

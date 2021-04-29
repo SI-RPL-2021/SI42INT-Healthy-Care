@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\See;
 
 class LoginController extends Controller
 {
@@ -81,17 +82,15 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        return redirect()->route('admin.profile');
+                        return redirect()->route('admin.dashboard');
                     } else {
-                        return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
+                        return redirect()-back()->with(['error' => 'Invalid Email or Password']);
                     }
                 }
-                return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
             }
         }
 
         // Auth Doctor
-        $datachek = User::where('email', $request->email)->first();
         if($datachek) {
             if($datachek->role == "doctor"){
                 $data = User::where('email', $request->email)->first();
@@ -106,15 +105,13 @@ class LoginController extends Controller
 
                         return redirect()->route('doctor.profile');
                     } else {
-                        return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
+                        return redirect()->back()->with(['error' => 'Invalid Email or Password']);
                     }
                 }
-                return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
             }
         }
 
         // Auth Nurse
-        $datachek = User::where('email', $request->email)->first();
         if($datachek) {
             if($datachek->role == "nurse"){
                 $data = User::where('email', $request->email)->first();
@@ -129,15 +126,13 @@ class LoginController extends Controller
 
                         return redirect()->route('nurse.dashboard');
                     } else {
-                        return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
+                        return redirect()->back()->with(['error' => 'Invalid Email or Password']);
                     }
                 }
-                return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
             }
         }
 
         // Auth Patient
-        $datachek = User::where('email', $request->email)->first();
         if($datachek) {
             if($datachek->role == "patient"){
                 $data = User::where('email', $request->email)->first();
@@ -150,17 +145,17 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->username == ''){
-                            return redirect()->route('');
+                        if($data->fullname == ''){
+                            return redirect()->route('patient.profile');
                         }
-                        return redirect()->route('');
+                        return redirect()->route('patient.profile');
                     } else {
-                        return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
+                        return redirect()->back()->with(['error' => 'Invalid Email or Password']);
                     }
                 }
-                return redirect()->route('loginpage')->with('error', 'Invalid Email or Password');
             }
         }
+        return redirect()->back()->with(['error' => 'Invalid Email or Password']);
     }
 
     public function logout(Request $request) {

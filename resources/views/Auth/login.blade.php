@@ -7,6 +7,12 @@
             <img class="mb-4" src="img/healty-care.png" alt="Healty Care Logo" width="100" height="100">
             <h1 class="h3 m-4 fw-bold">Silahkan Login</h1>
 
+            @if ($message = Session::get('error'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+
             <div class="form-floating">
                 <input type="email" class="form-control @error('email') is-invalid border-danger @enderror" id="inputEmail" name="email" value="{{old('email')}}" placeholder="name@example.com">
                 <label for="inputEmail">Alamat Email</label>
