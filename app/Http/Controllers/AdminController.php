@@ -32,49 +32,73 @@ class AdminController extends Controller
     }
 
     public function addAccount(Request $request) {
-        $rules = [
-            'fullname' => 'required',
-            'username' => 'required|max:20',
-            'email' => 'required',
-            'phone' => 'required|numeric|min:11',
-            'role' => 'required',
-            'password' => 'required|min:8',
-        ];
-        $message = [
-            'fullname.required' => 'Username is required',
-            'username.required' => 'Username is required',
-            'username.max' => 'Username maximum 20 characters',
-            'email.required' => 'Username is required',
-            'phone.required' => 'Phone number is required',
-            'phone.numeric' => 'Phone number must be a number',
-            'phone.min' => 'Phone number minimum 11 numbers',
-            'role.required' => 'Role is required',
-            'password.required' => 'Password is required',
-            'password.min' => 'Password minimum 8 characters',
-        ];
+        // $rules = [
+        //     'fullname' => 'required',
+        //     'username' => 'required|max:20',
+        //     'email' => 'required',
+        //     'phone' => 'required|numeric|min:11',
+        //     'role' => 'required',
+        //     'password' => 'required|min:8',
+        // ];
+        // $message = [
+        //     'fullname.required' => 'Username is required',
+        //     'username.required' => 'Username is required',
+        //     'username.max' => 'Username maximum 20 characters',
+        //     'email.required' => 'Username is required',
+        //     'phone.required' => 'Phone number is required',
+        //     'phone.numeric' => 'Phone number must be a number',
+        //     'phone.min' => 'Phone number minimum 11 numbers',
+        //     'role.required' => 'Role is required',
+        //     'password.required' => 'Password is required',
+        //     'password.min' => 'Password minimum 8 characters',
+        // ];
 
-        $validator = Validator::make($request->all(), $rules, $message);
+        // $validator = Validator::make($request->all(), $rules, $message);
 
-        if($validator->fails()){
-            return redirect()->back()->withErrors($validator)->withInput($request->all());
-        }
+        // if($validator->fails()){
+        //     return redirect()->back()->withErrors($validator)->withInput($request->all());
+        // }
 
-        $user = User::create([
-            // 'full_name' => $request->fullname,
-            'username' => $request->username,
-            'email' => $request->email,
-            // 'phone_number' => $request->phone,
-            'role' => $request->role,
-            'password' => $request->password,
-        ]);
-        $save = $user->save();
-
-        error_log($request->fullname);
-
-        if($save) {
+        //check role
+        error_log("error");
+        // if($request->role == "admin") {
+            $user = User::create([
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => $request->password,
+                'role' => "admin",
+            ]);
+            $user->save();
+            $admin = Admin::create([
+                'user_id' => $user->id,
+                'full_name' => $request->fullname,
+                'phone_number' => $request->phone,
+            ]);
+            $admin->save();
             return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);;
-        } else {
-            return redirect()->route('admin.userManagement')->with(['failed' => 'account was not created successfully']);
+            error_log("error2");
+        // } else if($request->role == "doctor") {
+
+        // } else if($request->role == "nurse") {
+
+        // } else {
+
+        // }
+
+        // if($save) {
+        //     return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);;
+        // } else {
+        //     return redirect()->route('admin.userManagement')->with(['failed' => 'account was not created successfully']);
+        // }
+    }
+
+    public function editAccountPage($id) {
+        $data = User::find($id);
+        if($data->role == "doctor") {
+            return view('Admin.editDoctor', compact('data'));   
+        }
+        else if($data->role == "nurse") {
+            return view('Admin.editNurse', compact('data'));   
         }
     }
 

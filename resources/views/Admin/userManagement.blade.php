@@ -112,7 +112,7 @@
                                             </span>
                                             <span class="text">Delete</span>
                                         </a>
-                                        <a href="" class="btn btn-primary btn-icon-split ml-2">
+                                        <a href="./account/update/{{ $data->id }}" class="btn btn-primary btn-icon-split ml-2">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-pen"></i>
                                             </span>

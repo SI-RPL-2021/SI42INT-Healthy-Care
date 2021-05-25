@@ -44,6 +44,7 @@ Route::prefix('admin/')->group(function() {
     Route::get('history', [AdminController::class, 'history'])->name('admin.history');
     Route::get('addAccount', [AdminController::class, 'addAccountPage'])->name('admin.addAccountpage');
     Route::post('addAccount', [AdminController::class, 'addAccount'])->name('admin.addAccount');
+    Route::get('account/update/{id}', [AdminController::class, 'editAccountPage'])->name('admin.editAccount');
     Route::get('account/delete/{id}', [AdminController::class, 'deleteAccount'])->name('admin.deleteAccount');
 });
 
@@ -52,6 +53,8 @@ Route::prefix('doctor/')->group(function() {
 });
 // Test
 Route::get('/1', function () {
-    return view('Admin.addAccount');
+    return view('Admin.editNurse');
 });
+
+Route::get('/2', [RegisterController::class, 'example']);
 

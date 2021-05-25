@@ -159,7 +159,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="role" class="bmd-label-floating ml-1">Role</label>
-                                                <input type="text" class="form-control" id="inputRole" name="role" value="admin" disabled>
+                                                <input type="text" class="form-control" id="inputRole" name="role" value="admin" onlyread>
                                             </div>
                                         </div>
                                     </div>

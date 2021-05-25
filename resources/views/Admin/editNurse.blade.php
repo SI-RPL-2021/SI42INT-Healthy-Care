@@ -51,13 +51,13 @@
               <div class="form-group row">
                 <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="{{ $Nurse->full_name }}" name="full_name">
+                  <input type="text" readonly class="form-control-plaintext" id="full_name" value="" name="full_name">
                 </div>"
               </div>
               <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="email" value="{{ $Nurse2->email }}" name="email">
+                  <input type="text" readonly class="form-control-plaintext" id="email" value="" name="email">
                 </div>
               </div>
               <div class="form-group row">
@@ -122,7 +122,7 @@
             </a>
           </div>
           <div class="card-body">
-            <h6 class="card-category text-gray">{{ $Nurse2->role }}</h6>
+            <h6 class="card-category text-gray"></h6>
             <h4 class="card-title">{{ $Nurse->full_name }}</h4>
             <p class="card-description">
               No.Telp: {{ $Nurse->phone_number }}

@@ -16,7 +16,6 @@ class CreateNursesTable extends Migration
         Schema::create('nurses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('position', ['']);
             $table->string('full_name');
             $table->text('image')->nullable();
             $table->string('phone_number');
