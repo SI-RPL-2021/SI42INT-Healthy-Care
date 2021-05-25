@@ -54,7 +54,12 @@
                   <div class="col-md-12">
                       <div class="form-group">
                           <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
-                          <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $data->full_name }}">
+                          <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="inputFullname" name="full_name" value="{{ $data->full_name }}">
+                          @error('full_name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                          @enderror
                       </div>
                   </div>
               </div>
@@ -62,7 +67,12 @@
                   <div class="col-md-12">
                       <div class="form-group">
                           <label for="username" class="bmd-label-floating ml-1">Username</label>
-                          <input type="text" class="form-control" id="inputUsername" name="Username" value="{{ $data2->username }}">
+                          <input type="text" class="form-control @error('username') is-invalid @enderror" id="inputUsername" name="username" value="{{ $data2->username }}">
+                          @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                          @enderror
                       </div>
                   </div>
               </div>
@@ -80,7 +90,12 @@
                   <div class="col-md-12">
                       <div class="form-group">
                           <label for="email" class="bmd-label-floating ml-1">Email</label>
-                          <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $data2->email }}">
+                          <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" name="email" value="{{ $data2->email }}">
+                          @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                          @enderror
                       </div>
                   </div>
               </div>

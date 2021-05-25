@@ -19,24 +19,32 @@ class PatientController extends Controller
 
     public function edit($id)
     {
-        $edit2 = User::find($id);
-        error_log($edit2->id);
         $edit = Patient::where('user_id', $id)->first();
-        return view('Patient.editProfile', compact('edit2', 'edit'));
+        $edit2 = User::find($id);
+        // error_log($edit2->id);
+        return view('Patient.editProfile', compact('edit', 'edit2'));
     }
 
     public function update(Request $request, $id) 
     {
-        $user = User::find($id);
+        $request->validate([
+            'fullname' => 'required',
+            'username'  => 'required',
+            'email'     => 'required'
+        ]);
 
-        $user->patient()->full_name    = $request->fullname;
-        $user->username                = $request->username;
-        $user->email                   = $request->email;
-        $user->patient()->phone_number = $request->phone;
-        $user->patient()->gender       = $request->gender;
-        $user->patient()->address      = $request->address;
+        $user = User::where('id', $id)->first();
+        $patient = Patient::where('user_id', $id)->first();
 
-        $user->save();
+        $user->username  = $request->username;
+        $user->email     = $request->email;
+        $save = $user->save();
+
+        $patient->fullname     = $request->fullname;
+        $patient->phone_number = $request->phone;
+        $patient->gender       = $request->gender;
+        $patient->address      = $request->address;
+        $save = $patient->save();
 
         if($save) {
             return redirect()->route('patient.profile')->with(['success' => 'Account has been updated successfully']);;
@@ -45,9 +53,9 @@ class PatientController extends Controller
         }
     }
 
-    public function exampleMethod($data1, $data2)
-    {
-        $hasil = $data1 + $data2;
-        return $hasil;
-    }
+    // public function exampleMethod($data1, $data2)
+    // {
+    //     $hasil = $data1 + $data2;
+    //     return $hasil;
+    // }
 }

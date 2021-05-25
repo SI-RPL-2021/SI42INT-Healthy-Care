@@ -49,70 +49,79 @@
               @csrf
 
               <div class="form-group row">
-                <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="full_name" value="{{ $data->full_name }}" name="full_name">
-                </div>
+                    <label for="full_name" class="col-sm-3 col-form-label">Nama Lengkap</label>
+                    <div class="col">
+                        <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="full_name" value="{{ $data->full_name }}" name="full_name">
+                        @error('full_name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="email" class="col-sm-3 col-form-label">Email</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="email" value="{{ $data2->email }}" name="email">
-                </div>
+                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ $data2->email }}" name="email">
+                        @error('email')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                        @enderror
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="email" class="col-sm-3 col-form-label">Username</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="username" value="{{ $data2->username }}" name="username">
-                </div>
+                    <label for="username" class="col-sm-3 col-form-label">Username</label>
+                    <div class="col">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" value="{{ $data2->username }}" name="username">
+                        @error('username')
+                          <div class="invalid-feedback">
+                              {{ $message }}
+                          </div>
+                        @enderror
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="position" class="col-sm-3 col-form-label">Jabatan</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="position" value="{{ $data->position }}" name="position">
-                </div>
+                    <label for="Age" class="col-sm-3 col-form-label">Age</label>
+                    <div class="col">
+                        <input type="number" class="form-control" id="age" value="{{ $data->age }}" name="age">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="Age" class="col-sm-3 col-form-label">Age</label>
-                <div class="col">
-                  <input type="number" class="form-control" id="age" value="{{ $data->age }}" name="age">
-                </div>
+                    <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="gender" value="{{ $data->gender }}" name="gender">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="gender" class="col-sm-3 col-form-label">Gender</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="gender" value="{{ $data->gender }}" name="gender">
-                </div>
+                    <label for="address" class="col-sm-3 col-form-label">Alamat</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="address" value="{{ $data->address }}" name="address">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="address" class="col-sm-3 col-form-label">Alamat</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="address" value="{{ $data->address }}" name="address">
-                </div>
+                    <label for="birth" class="col-sm-3 col-form-label">Tanggal Lahir</label>
+                    <div class="col">
+                        <input type="date" class="form-control" id="birth" value="{{ $data->birth }}" name="birth">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="birth" class="col-sm-3 col-form-label">Tanggal Lahir</label>
-                <div class="col">
-                  <input type="date" class="form-control" id="birth" value="{{ $data->birth }}" name="birth">
-                </div>
+                    <label for="unit" class="col-sm-3 col-form-label">Unit Kerja</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="unit" value="{{ $data->unit }}" name="unit">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="unit" class="col-sm-3 col-form-label">Unit Kerja</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="unit" value="{{ $data->unit }}" name="unit">
-                </div>
+                    <label for="instance" class="col-sm-3 col-form-label">Instansi Kerja</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="instance" value="{{ $data->instance }}" name="instance">
+                    </div>
               </div>
               <div class="form-group row">
-                <label for="instance" class="col-sm-3 col-form-label">Instansi Kerja</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="instance" value="{{ $data->instance }}" name="instance">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="religion" class="col-sm-3 col-form-label">Agama</label>
-                <div class="col">
-                  <input type="text" class="form-control" id="religion" value="{{ $data->religion }}" name="religion">
-                </div>
+                    <label for="religion" class="col-sm-3 col-form-label">Agama</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="religion" value="{{ $data->religion }}" name="religion">
+                    </div>
               </div>
 
               <div class="form-group row">

@@ -12,7 +12,7 @@ class Admin extends Model
     protected $table = 'admins';
 
     protected $fillable = [
-        'image', 'fullname', 'phone_number'
+        'image', 'fullname', 'phone_number', 'username'
     ];
 
     public function user() {

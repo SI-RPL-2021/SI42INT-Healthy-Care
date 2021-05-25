@@ -99,36 +99,27 @@ class AdminController extends Controller
 
     public function updateAccount(Request $request, $id) 
     {
-        // $rules = [
-        //     'fullname' => 'required',
-        //     'username' => 'required|max:20',
-        //     'email'    => 'required'
-        // ];
+        $request->validate([
+            'full_name' => 'required',
+            'username'  => 'required',
+            'email'     => 'required'
+        ]);
 
-        // $message = [
-        //     'fullname.required' => 'Username is required',
-        //     'username.required' => 'Username is required',
-        //     'username.max'      => 'Username maximum 20 characters'
-        // ];
-
-        // $validator = Validator::make($request->all(), $rules, $message);
-
-        // if($validator->fails()) {
-        //     return redirect()->back()->withErrors($validator)->withInput($request->all());
-        // }
-
-        $user = User::find($id);
+        $user = User::where('id', $id)->first();
+        $doctor = Doctor::where('user_id', $id)->first();
+        $nurse = Nurse::where('user_id', $id)->first();
 
         if($user->role == "doctor") {
-            
-            $user->doctor()->full_name    = $request->fullname;
-            $user->username               = $request->Username;
-            $user->doctor()->specialist   = $request->specialist;
-            $user->email                  = $request->email;
-            $user->doctor()->address      = $request->address;
-            $user->doctor()->phone_number = $request->Phone;
 
+            $user->username       = $request->Username;
+            $user->email          = $request->email;
             $save = $user->save();
+            
+            $doctor->full_name    = $request->full_name;
+            $doctor->specialist   = $request->specialist;
+            $doctor->address      = $request->address;
+            $doctor->phone_number = $request->Phone;
+            $save = $doctor->save();
 
             if($save) {
                 return redirect()->route('admin.userManagement')->with(['success' => 'Account has been updated successfully']);;
@@ -138,19 +129,20 @@ class AdminController extends Controller
 
         } else if($user->role == "nurse") {
 
-            $user->nurse()->full_name    = $request->full_name;
-            $user->email                 = $request->email;
-            $user->username              = $request->username;
-            $user->nurse()->position     = $request->position;
-            $user->nurse()->age          = $request->age;
-            $user->nurse()->gender       = $request->gender;
-            $user->nurse()->address      = $request->address;
-            $user->nurse()->birth        = $request->birth;
-            $user->nurse()->unit         = $request->unit;
-            $user->nurse()->instance     = $request->instance;
-            $user->nurse()->religion     = $request->religion;
-
+            $user->email         = $request->email;
+            $user->username      = $request->username;
             $save = $user->save();
+
+            $nurse->full_name    = $request->full_name;
+            $nurse->position     = $request->position;
+            $nurse->age          = $request->age;
+            $nurse->gender       = $request->gender;
+            $nurse->address      = $request->address;
+            $nurse->birth        = $request->birth;
+            $nurse->unit         = $request->unit;
+            $nurse->instance     = $request->instance;
+            $nurse->religion     = $request->religion;
+            $save = $nurse->save();
 
             if($save) {
                 return redirect()->route('admin.userManagement')->with(['success' => 'Account has been updated successfully']);;

@@ -31,15 +31,30 @@
 
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
-                        <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $edit->full_name }}">
+                        <input type="text" class="form-control mb-0 @error('fullname') is-invalid @enderror" id="inputFullname" name="fullname" value="{{ $edit->fullname }}">
+                        @error('fullname')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" id="inputUsername" name="username" value="{{ $edit2->username }}">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="inputUsername" name="username" value="{{ $edit2->username }}">
+                        @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="email" value="{{ $edit2->email }}">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail" name="email" value="{{ $edit2->email }}">
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone number</label>
