@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('admin.profile') }}">
                 <i class="material-icons">person</i>
                 <p>My Profile</p>
             </a>
@@ -49,51 +49,77 @@
                         <form class="form" enctype="multipart/form-data" action="{{route('admin.postProfile')}}"
                             method="POST">
                             @csrf
-                            <input type="text" class="form-control" name="id" value="{{ $admin->id }}" hidden>
+                            <input type="text" class="form-control" name="id" value="{{ $data->id }}" hidden>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
-                                        <input type="text" class="form-control" id="inputFullname" name="fullname"
-                                            value="{{ $admin->full_name }}">
+                                        <label for="Fullname" class="bmd-label-floating ml-1">Fullname</label>
+                                        <input type="text" class="form-control @error('Fullname') is-invalid @enderror" id="inputFullname" name="Fullname"
+                                            value="{{ $data2->full_name }}">
+                                        @error('Fullname')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="username" class="bmd-label-floating ml-1">Username</label>
-                                        <input type="text" class="form-control" id="inputUsername" name="Username"
-                                            value="{{ $admin2->username }}">
+                                        <label for="Username" class="bmd-label-floating ml-1">Username</label>
+                                        <input type="text" class="form-control @error('Username') is-invalid @enderror" id="inputUsername" name="Username"
+                                            value="{{ $data->username }}">
+                                        @error('Username')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="email" class="bmd-label-floating ml-1">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail" name="email"
-                                            value="{{ $admin2->email }}">
+                                        <label for="Email" class="bmd-label-floating ml-1">Email</label>
+                                        <input type="email" class="form-control @error('Email') is-invalid @enderror" id="inputEmail" name="Email"
+                                            value="{{ $data->email}}">
+                                        @error('Email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
-                                        <input type="text" class="form-control" id="inputPhone" name="Phone"
-                                            value="{{ $admin->phone_number }}">
+                                        <label for="Phone" class="bmd-label-floating ml-1">Phone number</label>
+                                        <input type="text" class="form-control @error('Phone') is-invalid @enderror" id="inputPhone" name="Phone"
+                                            value="{{ $data2->phone_number }}">
+                                        @error('Phone')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="role" class="bmd-label-floating ml-1">Role</label>
-                                        <input type="text" class="form-control" id="inputRole" name="role"
-                                            value="{{ $admin2->role }}" disabled>
+                                        <input type="text" class="form-control @error('Role') is-invalid @enderror" id="inputRole" name="Role"
+                                            value="{{ $data->role }}" disabled>
+                                        @error('Role')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary pull-right mt-3">Save</button>
+                            <button type="submit" value="submit" class="btn btn-primary btn-md">SAVE</button>
+                            <a href="{{ route('admin.userManagement') }}" class="btn btn-danger btn-md">CANCEL</a>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -105,8 +131,8 @@
                         <img class="img" src="img/healty-care.png" alt="Healty Care Logo" width="100" height="100">
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">{{ $admin2->role }}</h6>
-                        <h4 class="card-title">{{ $admin->full_name }}</h4>
+                        <h6 class="card-category text-gray">{{ $data->role }}</h6>
+                        <h4 class="card-title">{{ $data2->full_name }}</h4>
                         <p class="card-description">
                             Don't be scared of the truth because we need to restart the human foundation in truth And I
                             love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...

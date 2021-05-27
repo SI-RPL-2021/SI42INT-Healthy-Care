@@ -16,6 +16,7 @@
     <!-- Icon Font Css -->
     <link rel="stylesheet" href="{{ asset('plugins/icofont/icofont.min.css')}}">
     <script src="https://kit.fontawesome.com/d54aea4276.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> --}}
     <!-- Slick Slider  CSS -->
     <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick.css')}}">
     <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick-theme.css')}}">
@@ -34,7 +35,7 @@
         <div class="header-top-bar">
             <div class="ml-5">
                 <div class="text-lg-left top-right-bar mt-2 mt-lg-0">
-                    <img class="img-fluid mr-2" src="img/healty-care.png" alt="Healty Care Logo" width="50 px">
+                    <img class="img-fluid mr-2" src="{{ asset('img/healty-care.png') }}" alt="Healty Care Logo" width="50 px">
                     <span><b>HEALTHY CARE</b></span>
                 </div>
             </div>
@@ -51,19 +52,23 @@
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="{{ route('patient.homepage')}}">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile<i class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="">Doctors</a></li>
-                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="">Appoinment</a></li>
+                                <li><a class="dropdown-item" href="{{ route('patient.schedule')}}">My Schedule</a></li>
+                                <li><a class="dropdown-item" href="{{ route('patient.profile') }}">My Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">LogOut</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <i class="icofont-thin-down"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item" href="">About Us</a></li>
+                                <li><a class="dropdown-item" href="">Contact</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,8 +184,33 @@
     <!-- Google Map -->
     <script src="{{ asset('plugins/google-map/map.js')}}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
-
+    
     <script src="{{ asset('js/script.js')}}"></script>
     <script src="{{ asset('js/contact.js')}}"></script>
+    {{-- <script>
+        $(document).ready(function(){
+            $('.dynamic').change(function(){
+                if($(this).val() != '') {
+                    var select = $(this).attr("id");
+                    var value = $(this).val();
+                    var dependent = $(this).data('dependent');
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                        url:"{{ route('dynamicdependent.fetch') }}",
+                        method:"POST",
+                        data:{select:select, value:value, _token:_token, dependent:dependent},
+                        success:function(result) {
+                            $('#'+dependent).html(result);
+                        }
+
+                    })
+                }
+            });
+
+            $('#specialist').change(function(){
+                $('#doctor').val('');
+            });
+        });
+    </script> --}}
 </body>
 </html>

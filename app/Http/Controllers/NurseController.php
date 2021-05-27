@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Nurse;
@@ -11,7 +12,8 @@ class NurseController extends Controller
 {
     public function dashboard()
     {
-        return view('Nurse.dashboard');
+        $data = Appointment::all();
+        return view('Nurse.dashboard', ['data' => $data]);
     } 
 
     public function profile()

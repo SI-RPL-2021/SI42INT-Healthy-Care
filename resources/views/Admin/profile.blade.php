@@ -23,7 +23,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
-                <p>Hitory Transaction</p>
+                <p>History Transaction</p>
             </a>
         </li>
     </ul>
@@ -53,7 +53,7 @@
                                     <div class="form-group">
                                         <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
                                         <input type="text" class="form-control" id="inputFullname" name="fullname"
-                                            value="{{ $admin->full_name }}" disabled>
+                                            value="{{ $admin->admin->full_name }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="username" class="bmd-label-floating ml-1">Username</label>
                                         <input type="text" class="form-control" id="inputUsername" name="Username"
-                                            value="{{ $admin2->username }}" disabled>
+                                            value="{{ $admin->username }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                     <div class="form-group">
                                         <label for="email" class="bmd-label-floating ml-1">Email</label>
                                         <input type="email" class="form-control" id="inputEmail" name="email"
-                                            value="{{ $admin2->email }}" disabled>
+                                            value="{{ $admin->email }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -80,18 +80,18 @@
                                     <div class="form-group">
                                         <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
                                         <input type="text" class="form-control" id="inputPhone" name="Phone"
-                                            value="{{ $admin->phone_number }}" disabled>
+                                            value="{{ $admin->admin->phone_number }}" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="role" class="bmd-label-floating ml-1">Role</label>
                                         <input type="text" class="form-control" id="inputRole" name="role"
-                                            value="{{ $admin2->role }}" disabled>
+                                            value="{{ $admin->role }}" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <a href="updateProfile/{{ $admin->id }}" class="btn btn-primary pull-right mt-3">Update
+                            <a href="editAccount/{{ $admin->id }}" class="btn btn-primary pull-right mt-3">Update
                                 Profile</a>
                             <div class="clearfix"></div>
                         </form>

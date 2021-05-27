@@ -12,8 +12,10 @@ class Patient extends Model
     protected $table = 'patients';
 
     protected $fillable = [
-        'image', 'full_name', 'phone_number', 'position',
-        'age', 'gender', 'address', 'birth', 'unit',
-        'instance', 'religion'
+        'full_name', 'username', 'email', 'phone', 'gender', 'address'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

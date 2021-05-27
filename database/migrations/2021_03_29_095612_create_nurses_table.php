@@ -21,7 +21,7 @@ class CreateNursesTable extends Migration
             $table->string('phone_number');
             $table->integer('age');
             $table->date('birth');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('address');
             $table->string('unit');
             $table->string('instance');

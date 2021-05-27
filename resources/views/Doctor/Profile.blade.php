@@ -47,7 +47,7 @@
                         <p class="card-category">Complete your profile</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form class="form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -83,6 +83,20 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
+                                        <input type="text" class="form-control" id="inputPhone" name="Phone" value="{{ $doctor->phone_number }}" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="role" class="bmd-label-floating ml-1">Role</label>
+                                        <input type="text" class="form-control" id="inputRole" name="role" value="{{ $doctor2->role }}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Specialist</label>
@@ -111,23 +125,22 @@
             <div class="col-md-4">
                 <div class="card card-profile">
                     <div class="card-avatar">
-                        <a href="javascript:;">
-                            <img class="img" src="{{asset('img/faces/dokter igun.jpg')}}">
-                        </a>
+                      <img class="img" src="{{ asset('img/faces/dokter igun.jpg') }}">
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                        <h4 class="card-title">Alec Thompson</h4>
-                        <p class="card-description">
-                            Don't be scared of the truth because we need to restart the human foundation in truth And I
-                            love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                        </p>
-                        <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
+                      <h6 class="card-category text-gray">{{ $doctor2->role }}</h6>
+                      <h4 class="card-title">{{ $doctor->full_name }}</h4>
+                      <p class="card-description">
+                      {{ $doctor->specialist }}
+                        <br>
+                        1901023500098
+                      </p>
                     </div>
-                </div>
-            </div>
+                  </div>
+              </div>
+          </div>
         </div>
-    </div>
+      </div>
 </div>
 <!-- Content Ends Here -->
 @endsection
