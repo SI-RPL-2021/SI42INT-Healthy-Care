@@ -23,7 +23,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
-                <p>Hitory Transaction</p>
+                <p>History Transaction</p>
             </a>
         </li>
     </ul>
@@ -65,7 +65,7 @@
                             <div class="nav-tabs-wrapper">
                                 <ul class="nav nav-tabs" data-tabs="tabs">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#admin" data-toggle="tab">
+                                        <a class="nav-link active" href="#admin" name="Admin" value="admin" data-toggle="tab">
                                             <i class="material-icons">person</i> Admin
                                             <div class="ripple-container"></div>
                                         </a>
@@ -95,9 +95,9 @@
                                     <div class="row mt-2">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
-                                                <input type="text" class="form-control @error('fullname') is-invalid border-danger @enderror" id="inputFullname" name="fullname" value="{{old('fullname')}}">
-                                                @error('fullname')
+                                                <label for="Fullname" class="bmd-label-floating ml-1">Fullname</label>
+                                                <input type="text" class="form-control @error('Fullname') is-invalid border-danger @enderror" id="inputFullname" name="Fullname" value="{{old('Fullname')}}">
+                                                @error('Fullname')
                                                     <span class="invalid-feedback mt-0" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -108,9 +108,9 @@
                                     <div class="row mt-2">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="username" class="bmd-label-floating ml-1">Username</label>
-                                                <input type="text" class="form-control @error('username') is-invalid border-danger @enderror" id="inputUsername" name="username" value="{{old('username')}}">
-                                                @error('username')
+                                                <label for="Username" class="bmd-label-floating ml-1">Username</label>
+                                                <input type="text" class="form-control @error('Username') is-invalid border-danger @enderror" id="inputUsername" name="Username" value="{{old('Username')}}">
+                                                @error('Username')
                                                     <span class="invalid-feedback mt-0" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -121,9 +121,9 @@
                                     <div class="row mt-2">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="email" class="bmd-label-floating ml-1">Email</label>
-                                                <input type="email" class="form-control @error('email') is-invalid border-danger @enderror" id="inputEmail" name="email" value="{{old('email')}}">
-                                                @error('email')
+                                                <label for="Email" class="bmd-label-floating ml-1">Email</label>
+                                                <input type="email" class="form-control @error('Email') is-invalid border-danger @enderror" id="inputEmail" name="Email" value="{{old('Email')}}">
+                                                @error('Email')
                                                     <span class="invalid-feedback mt-0" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -134,9 +134,9 @@
                                     <div class="row mt-2">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="password" class="bmd-label-floating ml-1">Password</label>
-                                                <input type="password" class="form-control @error('password') is-invalid border-danger @enderror" id="inputPassword" name="password" value="{{old('password')}}">
-                                                @error('password')
+                                                <label for="Password" class="bmd-label-floating ml-1">Password</label>
+                                                <input type="password" class="form-control @error('Password') is-invalid border-danger @enderror" id="inputPassword" name="Password">
+                                                @error('Password')
                                                     <span class="invalid-feedback mt-0" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -147,9 +147,9 @@
                                     <div class="row mt-2">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="phone" class="bmd-label-floating ml-1">Phone number</label>
-                                                <input type="text" class="form-control @error('phone') is-invalid border-danger @enderror" id="inputPhone" name="phone" value="{{old('phone')}}">
-                                                @error('phone')
+                                                <label for="Phone" class="bmd-label-floating ml-1">Phone number</label>
+                                                <input type="text" class="form-control @error('Phone') is-invalid border-danger @enderror" id="inputPhone" name="Phone" value="{{old('Phone')}}">
+                                                @error('Phone')
                                                     <span class="invalid-feedback mt-0" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -158,8 +158,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="role" class="bmd-label-floating ml-1">Role</label>
-                                                <input type="text" class="form-control" id="inputRole" name="role" value="admin" disabled>
+                                                <label for="Role" class="bmd-label-floating ml-1">Role</label>
+                                                <input type="text" class="form-control" id="inputRole" name="Role" value="admin" disabled>
                                             </div>
                                         </div>
                                     </div>

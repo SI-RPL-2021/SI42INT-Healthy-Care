@@ -26,8 +26,9 @@
             </div>
 
             <div class="appoinment-wrap mt-5 mt-lg-0 col-lg-8">
-                <form class="form">
+                <form class="form" enctype="multipart/form-data">
                     @csrf               
+
                     <div class="form-group">
                         <label for="fullname">Full Name</label>
                         <input type="text" class="form-control" id="inputFullname" name="fullname" value="{{ $patient->full_name }}" disabled>
@@ -63,7 +64,9 @@
                         <label for="address">Address</label>
                         <textarea class="form-control" name="address" id="inputAddress" cols="30" rows="5" disabled>{{ $patient->address }}</textarea>
                     </div>
-                    <a class="btn btn-main btn-round-full mt-2" href="confirmation.html">Update Profile<i class="icofont-simple-right ml-2"></i></a>
+                    <a class="btn btn-main btn-round-full mt-2" href="edit/{{ $patient->id }}">
+                        Update Profile <i class="icofont-simple-right ml-2"></i>
+                    </a>
                 </form>
             </div>
         </div>

@@ -23,7 +23,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
-                <p>Hitory Transaction</p>
+                <p>History Transaction</p>
             </a>
         </li>
     </ul>
@@ -80,7 +80,7 @@
                         <div class="col-md-6 d-flex justify-content-end">
                             <a href="{{ route('admin.addAccount') }}" class="btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="material-icons">add</i>
                                 </span>
                                 <span class="text">Tambah Akun Baru</span>
                             </a>
@@ -108,13 +108,13 @@
                                     <td>{{ $data->updated_at }}</td>
                                     <td><a href="account/delete/{{ $data->id }}" class="btn btn-danger btn-icon-split ml-2">
                                             <span class="icon text-white-50">
-                                                <i class="fas fa-trash"></i>
+                                                <i class="material-icons">clear</i>
                                             </span>
                                             <span class="text">Delete</span>
                                         </a>
-                                        <a href="" class="btn btn-primary btn-icon-split ml-2">
+                                        <a href="editAccount/{{ $data->id }}" class="btn btn-primary btn-icon-split ml-2">
                                             <span class="icon text-white-50">
-                                                <i class="fas fa-pen"></i>
+                                                <i class="material-icons">edit</i>
                                             </span>
                                             <span class="text">Edit</span>
                                         </a>
