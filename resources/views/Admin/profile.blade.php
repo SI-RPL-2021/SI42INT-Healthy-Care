@@ -23,7 +23,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
-                <p>Hitory Transaction</p>
+                <p>History Transaction</p>
             </a>
         </li>
     </ul>
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="updateProfile/{{ $admin->id }}" class="btn btn-primary pull-right mt-3">Update
+                            <a href="editAccount/{{ $admin->id }}" class="btn btn-primary pull-right mt-3">Update
                                 Profile</a>
                             <div class="clearfix"></div>
                         </form>

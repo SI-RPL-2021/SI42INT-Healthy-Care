@@ -6,13 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-use function PHPSTORM_META\type;
-
 class LoginTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     * @group anjay
+     * @group login
      * @return void
      */
     public function testExample()
@@ -20,10 +18,11 @@ class LoginTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
                     ->assertSee('Silahkan Login')
-                    ->type('email', 'maderichard@gmail.com')
-                    ->type('password', 'made2000')
+                    ->type('email', 'Admin1@gmail.com')
+                    ->type('password', '123456789')
                     ->press('Submit')
-                    ->assertSee('Username');
+                    ->assertSee('Notification')
+                    ;
         });
     }
 }

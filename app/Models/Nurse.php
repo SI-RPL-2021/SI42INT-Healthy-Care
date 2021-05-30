@@ -16,4 +16,9 @@ class Nurse extends Model
         'age', 'gender', 'address', 'birth', 'unit',
         'instance', 'religion'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

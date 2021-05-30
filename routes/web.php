@@ -28,11 +28,16 @@ Route::prefix('/')->group(function() {
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('register', [RegisterController::class, 'registerpage'])->name('registerpage');
     Route::post('register', [RegisterController::class, 'register'])->name('register');
-    
 });
 
 Route::prefix('patient/')->group(function() {
+    Route::get('homepage', [PatientController::class, 'homepage'])->name('patient.homepage');
     Route::get('profile', [PatientController::class, 'profile'])->name('patient.profile');
+    Route::get('edit/{id}', [PatientController::class, 'updateProfilePage'])->name('patient.edit');
+    Route::post('update/{id}', [PatientController::class, 'update'])->name('patient.update');
+    Route::post('appointment', [PatientController::class, 'appointment'])->name('patient.appointment');
+    Route::get('schedule', [PatientController::class, 'schedule'])->name('patient.schedule');
+    // Route::post('dynamic_dependent/fetch', [PatientController::class, 'fetch'])->name('dynamicdependent.fetch');
 });
 
 Route::prefix('nurse/')->group(function() {
@@ -44,12 +49,13 @@ Route::prefix('nurse/')->group(function() {
 Route::prefix('admin/')->group(function() {
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
-    Route::get('updateProfile/{id}', [AdminController::class, 'updateProfilePage'])->name('admin.UpdateProfile');
     Route::post('updateProfile', [AdminController::class, 'updateProfile'])->name('admin.postProfile');
     Route::get('users', [AdminController::class, 'userManagement'])->name('admin.userManagement');
     Route::get('history', [AdminController::class, 'history'])->name('admin.history');
-    Route::get('addAccount', [AdminController::class, 'addAccountPage'])->name('admin.addAccountpage');
+    Route::get('addAccount', [AdminController::class, 'addAccountPage'])->name('admin.addAccountPage');
     Route::post('addAccount', [AdminController::class, 'addAccount'])->name('admin.addAccount');
+    Route::get('editAccount/{id}', [AdminController::class, 'editAccountPage'])->name('admin.editAccountPage');
+    Route::post('updateAccount/{id}', [AdminController::class, 'updateAccount'])->name('admin.updateAccount');
     Route::get('account/delete/{id}', [AdminController::class, 'deleteAccount'])->name('admin.deleteAccount');
 });
 
@@ -58,6 +64,8 @@ Route::prefix('doctor/')->group(function() {
 });
 // Test
 Route::get('/1', function () {
-    return view('Admin.addAccount');
+    return view('Patient.schedule');
 });
+
+Route::get('/2', [RegisterController::class, 'example']);
 

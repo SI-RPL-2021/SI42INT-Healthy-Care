@@ -47,10 +47,9 @@
                         <p class="card-category">Your profile</p>
                     </div>
                     <div class="card-body">
-                        <form class="form" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row mt-2">
-                                <div class="col-md-12">
+                        <form class="form">
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="fullname" class="bmd-label-floating ml-1">Fullname</label>
                                         <input type="text" class="form-control" id="inputFullname" name="fullname"
@@ -122,17 +121,22 @@
             <div class="col-md-4">
                 <div class="card card-profile">
                     <div class="card-avatar">
-                        <img class="img" src="{{ asset('img/faces/dokter igun.jpg') }}">
+                      <img class="img" src="{{ asset('img/faces/dokter igun.jpg') }}">
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">{{ $doctor2->role }}</h6>
-                        <h4 class="card-title">{{ $doctor->full_name }}</h4>
-                        <p class="card-description">
-                            Spesialis: {{ $doctor->specialist }}
-                            <br>
-                            1901023500098
-                        </p>
+                      <h6 class="card-category text-gray">{{ $doctor2->role }}</h6>
+                      <h4 class="card-title">{{ $doctor->full_name }}</h4>
+                      <p class="card-description">
+                      {{ $doctor->specialist }}
+                        <br>
+                        1901023500098
+                      </p>
                     </div>
-                </div>
-            </div>
-            @endsection
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- Content Ends Here -->
+@endsection
