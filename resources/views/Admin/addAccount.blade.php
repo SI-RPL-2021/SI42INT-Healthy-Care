@@ -42,7 +42,7 @@
             <i class="material-icons">close</i>
         </button>
         <span>
-            <strong>{{ $message }}</strong>    
+            <strong>{{ $message }}</strong>
         </span>
     </div>
 @elseif ($message = Session::get('failed'))
@@ -51,7 +51,7 @@
             <i class="material-icons">close</i>
         </button>
         <span>
-            <strong>{{ $message }}</strong>    
+            <strong>{{ $message }}</strong>
         </span>
     </div>
 @endif
@@ -476,6 +476,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
