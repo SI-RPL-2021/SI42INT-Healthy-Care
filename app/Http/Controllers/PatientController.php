@@ -36,6 +36,7 @@ class PatientController extends Controller
 
     public function profile() 
     {
+        error_log('1');
         $id = Session::get('id');
         $data = Patient::where('user_id', $id)->first();
         $data2 = User::find($id);
