@@ -26,12 +26,6 @@
           <p>Kamar Inap</p>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('nurse.notif') }}">
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
-        </a>
-      </li>
     </ul>
   </div>
 @endsection
@@ -50,12 +44,13 @@
         </div>
         <div class="card-body">
             <tbody>
-              <table class="table table-bordered table-active">
+              <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Doctor</th>
+                        <td>Patient</td>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -65,8 +60,8 @@
                         <tr>
                             <td>{{ $data->date }}</td>
                             <td>{{ $data->time }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $data->doctor->full_name }}</td>
+                            <td>{{ $data->patient->full_name }}</td>
                             <td>{{ $data->status }}</td>
                             <td></td>
                         </tr>

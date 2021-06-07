@@ -24,9 +24,4 @@ class NurseController extends Controller
         error_log(Session::get('id'));
         return view('Nurse.profile', ['Nurse' => $data, 'Nurse2' => $data2]);
     }
-
-    public function notif()
-    {
-        return view('Nurse.notifications');
-    }
 }

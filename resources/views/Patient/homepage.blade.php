@@ -120,8 +120,8 @@ style="
                                 <div class="form-group">
                                     <select class="form-control" name="Doctor1" id="doctor">
                                         <option>Select Doctors</option>
-                                        @foreach ($data as $specialist)
-                                            <option value="{{$specialist->id}}">{{$specialist->full_name}}</option>
+                                        @foreach ($data as $doctor)
+                                            <option value="{{$doctor->id}}">{{$doctor->full_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

@@ -14,11 +14,15 @@ class Nurse extends Model
     protected $fillable = [
         'image', 'full_name', 'phone_number', 'position',
         'age', 'gender', 'address', 'birth', 'unit',
-        'instance', 'religion'
+        'instance', 'religion', 'user_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function patient() {
+        return $this->belongsTo(Patient::class);
     }
 }

@@ -39,7 +39,6 @@ Route::prefix('patient/')->group(function() {
 Route::prefix('nurse/')->group(function() {
     Route::get('dashboard', [NurseController::class, 'dashboard'])->name('nurse.dashboard');
     Route::get('profile', [NurseController::class, 'profile'])->name('nurse.profile');
-    Route::get('notifications', [NurseController::class, 'notif'])->name('nurse.notif');
 });
 
 Route::prefix('admin/')->group(function() {

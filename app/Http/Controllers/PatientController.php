@@ -96,7 +96,7 @@ class PatientController extends Controller
         $user = User::where('id', $id)->first();
         error_log('test1');
         error_log($user->id);
-        error_log($request->Doctor);
+        error_log($request->Date);
         $appointment = Appointment::create([
             'doctor_id' => $request->Doctor,
             'patient_id' => $user->id,

@@ -21,7 +21,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('time');
             $table->string('phone_number');
             $table->text('message')->nullable();
-            $table->enum('status', ['accepted', 'denied', 'processed'])->default('processed');
+            $table->enum('status', ['accepted', 'denied', 'processed', 'done'])->default('processed');
             $table->timestamps();
 
             $table->foreign('doctor_id')->on('doctors')->references('id');
