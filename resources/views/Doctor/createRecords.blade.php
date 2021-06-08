@@ -1,4 +1,4 @@
-@extends('Admin/layout/template')
+@extends('Doctor/layout/template')
 @section('sidebar')
 <div class="sidebar-wrapper">
     <ul class="nav">

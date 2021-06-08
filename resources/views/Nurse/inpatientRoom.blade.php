@@ -65,7 +65,7 @@
                             <td>6</td>
                             <td>Perawatan Umum</td>
                             <td>
-                                <button type="button" class="btn btn-info">Detail</button>
+                                <button type="button" class="btn btn-info">Update</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
@@ -76,7 +76,7 @@
                             <td>6</td>
                             <td>Perawatan Anak</td>
                             <td>
-                                <button type="button" class="btn btn-info">Detail</button>
+                                <button type="button" class="btn btn-info">Update</button>
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>

@@ -61,12 +61,6 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="no_pmr" class="col-sm-3 col-form-label">No. PMR</label>
-                <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="no_pmr" name="no_pmr">
-                </div>
-              </div>
-              <div class="form-group row">
                 <label for="kode_pasien" class="col-sm-3 col-form-label">Kode Pasien</label>
                 <div class="col-sm-6">
                   <input type="text" readonly class="form-control-plaintext" id="kode_pasien" name="kode_pasien">

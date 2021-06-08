@@ -61,7 +61,7 @@
                             <td>Nadya Zahra</td>
                             <td>Nadya Zahra</td>
                             <td>
-                                <button type="button" class="btn btn-info">Detail</button>
+                                <a class="btn btn-info" href=" {{ view('Nurse/medicalRecords') }}">Detail</a>
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
@@ -70,7 +70,7 @@
                             <td>Nadya Zahra</td>
                             <td>Nadya Zahra</td>
                             <td>
-                                <button type="button" class="btn btn-info">Detail</button>
+                                <a class="btn btn-info" href=" ">Detail</a>
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>

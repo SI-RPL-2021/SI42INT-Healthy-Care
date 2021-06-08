@@ -67,7 +67,7 @@ Route::prefix('doctor/')->group(function() {
 });
 // Test
 Route::get('/1', function () {
-    return view('Nurse.inpatientRoom');
+    return view('Doctor.createRecords');
 });
 
 Route::get('/2', [RegisterController::class, 'example']);
