@@ -60,7 +60,7 @@ Route::prefix('doctor/')->group(function() {
 });
 // Test
 Route::get('/1', function () {
-    return view('Patient.schedule');
+    return view('Nurse.inpatientRoom');
 });
 
 Route::get('/2', [RegisterController::class, 'example']);
