@@ -26,12 +26,6 @@
           <p>Kamar Inap</p>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('nurse.notif') }}">
-          <i class="material-icons">notifications</i>
-          <p>Notifications</p>
-        </a>
-      </li>
     </ul>
   </div>
 @endsection
@@ -50,12 +44,13 @@
         </div>
         <div class="card-body">
             <tbody>
-              <table class="table table-bordered table-active">
+              <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Doctor</th>
+                        <td>Patient</td>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -63,12 +58,24 @@
                 <tbody>
                     @foreach ($data as $data)
                         <tr>
+                            @php
+                              $id = $data->id;
+                            @endphp
                             <td>{{ $data->date }}</td>
                             <td>{{ $data->time }}</td>
                             <td></td>
                             <td></td>
+                            {{-- <td>{{ $data->doctor->full_name }}</td> --}}
+                            {{-- <td>{{ $data->patient->full_name }}</td> --}}
                             <td>{{ $data->status }}</td>
-                            <td></td>
+                            <td>
+                              <a href="updateSchedule?id={{$id}}&action=accept" class="btn btn-primary btn-icon-split ml-2">
+                                <span class="text">Accept</span>
+                              </a>
+                              <a href="updateSchedule?id={{$id}}&action=deny" class="btn btn-danger btn-icon-split ml-2">
+                                <span class="text">Deny</span>
+                              </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

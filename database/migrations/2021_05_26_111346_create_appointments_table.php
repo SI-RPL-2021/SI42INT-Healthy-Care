@@ -21,11 +21,11 @@ class CreateAppointmentsTable extends Migration
             $table->string('time');
             $table->string('phone_number');
             $table->text('message')->nullable();
-            $table->enum('status', ['accepted', 'denied', 'processed'])->default('processed');
+            $table->enum('status', ['accepted', 'denied', 'processed', 'done'])->default('processed');
             $table->timestamps();
 
-            $table->foreign('doctor_id')->on('doctors')->references('id');
-            $table->foreign('patient_id')->on('patients')->references('id');
+            $table->foreign('doctor_id')->on('doctors')->references('user_id');
+            $table->foreign('patient_id')->on('patients')->references('user_id');
         });
     }
 

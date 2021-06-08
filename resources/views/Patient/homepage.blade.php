@@ -120,8 +120,8 @@ style="
                                 <div class="form-group">
                                     <select class="form-control" name="Doctor1" id="doctor">
                                         <option>Select Doctors</option>
-                                        @foreach ($data as $specialist)
-                                            <option value="{{$specialist->id}}">{{$specialist->full_name}}</option>
+                                        @foreach ($data as $doctor)
+                                            <option value="{{$doctor->id}}">{{$doctor->full_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -216,10 +216,10 @@ style="
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="Doctor @error('Doctor') is-invalid @enderror" id="doctor">
+                                    <select class="form-control @error('Doctor') is-invalid @enderror" name="Doctor" id="doctor" value="{{$doctor->user_id}}">
                                         <option>Select Doctors</option>
                                         @foreach ($data as $doctor)
-                                            <option value="{{$doctor->id}}" {{ old('Doctor') == $doctor->id ? 'selected' : '' }}>{{$doctor->full_name}}</option>
+                                            <option value="{{$doctor->user_id}}" {{ old('Doctor') == $doctor->user_id ? 'selected' : '' }}>{{$doctor->full_name}}</option>
                                         @endforeach
                                     </select>
                                     @error('Doctor')

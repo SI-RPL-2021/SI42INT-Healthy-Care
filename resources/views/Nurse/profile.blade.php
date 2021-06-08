@@ -26,12 +26,6 @@
             <p>Kamar Inap</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('nurse.notif') }}">
-            <i class="material-icons">notifications</i>
-            <p>Notifications</p>
-          </a>
-        </li>
       </ul>
     </div>
 @endsection

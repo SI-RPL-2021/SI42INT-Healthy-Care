@@ -29,65 +29,160 @@ class AdminController extends Controller
     }
 
     public function addAccount(Request $request) {
-        error_log($request->Admin);
-        $rules = [
-            'Fullname' => 'required',
-            'Username' => 'required|max:20',
-            'Email' => 'required',
-            'Phone' => 'required|numeric|min:11',
-            'Role' => 'required',
-            'Password' => 'required|min:8',
-        ];
-        $message = [
-            'Fullname.required' => 'Fullname is required',
-            'Username.required' => 'Username is required',
-            'Username.max' => 'Username maximum 20 characters',
-            'Email.required' => 'Email is required',
-            'Phone.required' => 'Phone number is required',
-            'Phone.numeric' => 'Phone number must be a number',
-            'Phone.min' => 'Phone number minimum 11 numbers',
-            'Role.required' => 'Role is required',
-            'Password.required' => 'Password is required',
-            'Password.min' => 'Password minimum 8 characters',
-        ];
+        if($request->Admin == "admin") {
+            $rules = [
+                'Fullname' => 'required',
+                'Username' => 'required|max:20',
+                'Email' => 'required',
+                'Phone' => 'required|numeric|min:11',
+                'Password' => 'required|min:8',
+            ];
+            $message = [
+                'Fullname.required' => 'Fullname is required',
+                'Username.required' => 'Username is required',
+                'Username.max' => 'Username maximum 20 characters',
+                'Email.required' => 'Email is required',
+                'Phone.required' => 'Phone number is required',
+                'Phone.numeric' => 'Phone number must be a number',
+                'Phone.min' => 'Phone number minimum 11 numbers',
+                'Password.required' => 'Password is required',
+                'Password.min' => 'Password minimum 8 characters',
+            ];
 
-        $validator = Validator::make($request->all(), $rules, $message);
-
-        if($validator->fails()){
-            return redirect()->back()->withErrors($validator)->withInput($request->all());
-        }
-
-        // check role
-        error_log("error");
-        error_log($request->Role);
-        if($request->Role == "admin") {
+            $validator = Validator::make($request->all(), $rules, $message);
+    
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput($request->all());
+            }
+    
             $user = User::create([
-                'username' => $request->username,
-                'email' => $request->email,
-                'password' => $request->password,
+                'username' => $request->Username,
+                'email' => $request->Email,
+                'password' => $request->Password,
                 'role' => "admin",
             ]);
             $user->save();
+
             $admin = Admin::create([
                 'user_id' => $user->id,
-                'full_name' => $request->fullname,
-                'phone_number' => $request->phone,
+                'full_name' => $request->Fullname,
+                'phone_number' => $request->Phone,
             ]);
             $admin->save();
-            return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);;
-            error_log("error2");
-        // } else if($request->role == "doctor") {
+            return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);
+        } 
+        
+        else if($request->Doctor == "doctor") {
+            $rules = [
+                'Fullname' => 'required',
+                'Username' => 'required|max:20',
+                'Specialist' => 'required',
+                'Email' => 'required',
+                'Address' => 'required',
+                'Phone' => 'required|numeric|min:11',
+                'Password' => 'required|min:8',
+            ];
+            $message = [
+                'Fullname.required' => 'Fullname is required',
+                'Username.required' => 'Username is required',
+                'Username.max' => 'Username maximum 20 characters',
+                'Specialist.required' => 'Specialist is required',
+                'Email.required' => 'Email is required',
+                'Address.required' => 'Address is required',
+                'Phone.required' => 'Phone number is required',
+                'Phone.numeric' => 'Phone number must be a number',
+                'Phone.min' => 'Phone number minimum 11 numbers',
+                'Password.required' => 'Password is required',
+                'Password.min' => 'Password minimum 8 characters',
+            ];
 
-        // } else if($request->role == "nurse") {
+            $validator = Validator::make($request->all(), $rules, $message);
+    
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput($request->all());
+            }
+    
+            $user = User::create([
+                'username' => $request->Username,
+                'email' => $request->Email,
+                'password' => $request->Password,
+                'role' => "doctor",
+            ]);
+            $user->save();
 
-        // } else {
+            $doctor = Doctor::create([
+                'user_id' => $user->id,
+                'full_name' => $request->Fullname,
+                'specialist' => $request->Specialist,
+                'phone_number' => $request->Phone,
+                'address' => $request->Address
+            ]);
+            $doctor->save();
+            return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);
+        }
 
-        // }
+        else if($request->Nurse == "nurse") {
+            $rules = [
+                'Fullname' => 'required',
+                'Username' => 'required|max:20',
+                'Email' => 'required',
+                'Age' => 'required',
+                'Gender' => 'required',
+                'Address' => 'required',
+                'Birth' => 'required',
+                'Religion' => 'required',
+                'Unit' => 'required',
+                'Instance' => 'required',
+                'Phone' => 'required|numeric|min:11',
+                'Password' => 'required|min:8',
+            ];
+            $message = [
+                'Fullname.required' => 'Fullname is required',
+                'Username.required' => 'Username is required',
+                'Username.max' => 'Username maximum 20 characters',
+                'Email.required' => 'Email is required',
+                'Age.required' => 'Age is required',
+                'Gender.required' => 'Gender is required',
+                'Address.required' => 'Address is required',
+                'Birth.required' => 'Birth is required',
+                'Religion.required' => 'Religion is required',
+                'Unit.required' => 'Unit is required',
+                'Instance.required' => 'Instance is required',
+                'Phone.required' => 'Phone number is required',
+                'Phone.numeric' => 'Phone number must be a number',
+                'Phone.min' => 'Phone number minimum 11 numbers',
+                'Password.required' => 'Password is required',
+                'Password.min' => 'Password minimum 8 characters',
+            ];
 
-        // if($save) {
-        //     return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);;
-        // } else {
-        //     return redirect()->route('admin.userManagement')->with(['failed' => 'account was not created successfully']);
+            $validator = Validator::make($request->all(), $rules, $message);
+    
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput($request->all());
+            }
+    
+            $user = User::create([
+                'username' => $request->Username,
+                'email' => $request->Email,
+                'password' => $request->Password,
+                'role' => "nurse",
+            ]);
+            $user->save();
+
+            $nurse = Nurse::create([
+                'user_id' => $user->id,
+                'full_name' => $request->Fullname,
+                'age' => $request->Age,
+                'birth' => $request->Birth,
+                'gender' => $request->Gender,
+                'unit' => $request->Unit,
+                'instance' => $request->Instance,
+                'religion' => $request->Religion,
+                'phone_number' => $request->Phone,
+                'address' => $request->Address
+            ]);
+            $nurse->save();
+            return redirect()->route('admin.userManagement')->with(['success' => 'Account has been created successfully']);
         }
     }
 

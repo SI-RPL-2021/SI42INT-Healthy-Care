@@ -12,7 +12,7 @@ class Doctor extends Model
     protected $table = 'doctors';
 
     protected $fillable = [
-        'image', 'full_name', 'specialist', 'address', 'phone_number'
+        'image', 'full_name', 'specialist', 'address', 'phone_number', 'user_id'
     ];
 
     public function user() {
