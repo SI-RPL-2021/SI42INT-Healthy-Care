@@ -69,10 +69,11 @@ class LoginController extends Controller
         }
 
         // Auth Admin
-        $datachek = User::where('email', $request->email)->first();
+        $datachek = User::whereRaw("BINARY `email`= ?", [$request->email])->first();
+        error_log($request->email);
         if($datachek) {
             if($datachek->role == "admin"){
-                $data = User::where('email', $request->email)->first();
+                $data = User::whereRaw("BINARY `email`= ?", [$request->email])->first();
                 if($data){
                     if($request->password == $data->password){
                         Session::put('role', $data->role);
@@ -93,7 +94,7 @@ class LoginController extends Controller
         // Auth Doctor
         if($datachek) {
             if($datachek->role == "doctor"){
-                $data = User::where('email', $request->email)->first();
+                $data = User::whereRaw("BINARY `email`= ?", [$request->email])->first();
                 if($data){
                     if($request->password == $data->password){
                         Session::put('role', $data->role);
@@ -103,7 +104,7 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        return redirect()->route('doctor.profile');
+                        return redirect()->route('doctor.dashboard');
                     } else {
                         return redirect()->back()->with(['error' => 'Invalid Email or Password']);
                     }
@@ -114,7 +115,7 @@ class LoginController extends Controller
         // Auth Nurse
         if($datachek) {
             if($datachek->role == "nurse"){
-                $data = User::where('email', $request->email)->first();
+                $data = User::whereRaw("BINARY `email`= ?", [$request->email])->first();
                 if($data){
                     if($request->password == $data->password){
                         Session::put('role', $data->role);
@@ -135,7 +136,7 @@ class LoginController extends Controller
         // Auth Patient
         if($datachek) {
             if($datachek->role == "patient"){
-                $data = User::where('email', $request->email)->first();
+                $data = User::whereRaw("BINARY `email`= ?", [$request->email])->first();
                 if($data){
                     if($request->password == $data->password){
                         Session::put('role', $data->role);
@@ -145,10 +146,10 @@ class LoginController extends Controller
                         Session::put('id', $data->id);
                         Session::put('login', TRUE);
 
-                        if($data->fullname == ''){
-                            return redirect()->route('patient.profile');
+                        if($data->full_name == ''){
+                            return redirect()->route('patient.homepage');
                         }
-                        return redirect()->route('patient.profile');
+                        return redirect()->route('patient.homepage');
                     } else {
                         return redirect()->back()->with(['error' => 'Invalid Email or Password']);
                     }

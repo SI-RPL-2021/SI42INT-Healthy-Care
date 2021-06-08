@@ -12,6 +12,14 @@ class Doctor extends Model
     protected $table = 'doctors';
 
     protected $fillable = [
-        'image', 'full_name', 'specialist', 'address'
+        'image', 'full_name', 'specialist', 'address', 'phone_number', 'user_id'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function appointment() {
+        return $this->hasOne(Appointment::class);
+    }
 }

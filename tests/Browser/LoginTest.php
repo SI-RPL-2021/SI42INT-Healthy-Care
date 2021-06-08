@@ -10,14 +10,19 @@ class LoginTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     * @group Profile
+     * @group login
      * @return void
      */
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->assertSee('Silahkan Login');
+            $browser->visit('/login')
+                    ->assertSee('Silahkan Login')
+                    ->type('email', 'Admin1@gmail.com')
+                    ->type('password', '123456789')
+                    ->press('Submit')
+                    ->assertSee('Notification')
+                    ;
         });
     }
 }

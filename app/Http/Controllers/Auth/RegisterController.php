@@ -95,4 +95,9 @@ class RegisterController extends Controller
             return redirect()->route('registerpage');
         }
     }
+
+    public function example($data1, $data2) {
+        $hasil = $data1 + $data2;
+        return $hasil;
+    }
 }

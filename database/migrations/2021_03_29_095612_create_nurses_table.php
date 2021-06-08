@@ -16,13 +16,12 @@ class CreateNursesTable extends Migration
         Schema::create('nurses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('position', ['']);
             $table->string('full_name');
             $table->text('image')->nullable();
             $table->string('phone_number');
             $table->integer('age');
             $table->date('birth');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('address');
             $table->string('unit');
             $table->string('instance');

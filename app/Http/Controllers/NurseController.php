@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Nurse;
@@ -11,7 +12,8 @@ class NurseController extends Controller
 {
     public function dashboard()
     {
-        return view('Nurse.dashboard');
+        $data = Appointment::all();
+        return view('Nurse.dashboard', ['data' => $data]);
     } 
 
     public function profile()
@@ -23,8 +25,22 @@ class NurseController extends Controller
         return view('Nurse.profile', ['Nurse' => $data, 'Nurse2' => $data2]);
     }
 
-    public function notif()
-    {
-        return view('Nurse.notifications');
+    public function updateSchedule(Request $request) {
+        $id = $request->input('id');
+        $action = $request->input('action');
+        $appointment = Appointment::where('id', $id)->first();
+
+        if($action == 'accept') {
+            $appointment->status = 'accepted';
+        } else {
+            $appointment->status = 'denied';
+        }
+        $save = $appointment->save();
+
+        if($save) {
+            return redirect()->back()->with(['success' => 'Schedule has been updated successfully']);;
+        } else {
+            return redirect()->back()->with(['failed' => 'Schedule was not updated successfully']);
+        }
     }
 }

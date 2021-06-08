@@ -26,12 +26,6 @@
             <p>Kamar Inap</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('nurse.notif') }}">
-            <i class="material-icons">notifications</i>
-            <p>Notifications</p>
-          </a>
-        </li>
       </ul>
     </div>
 @endsection
@@ -65,9 +59,9 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="position" class="col-sm-3 col-form-label">Jabatan</label>
+                <label for="phone" class="col-sm-3 col-form-label">No. telepon</label>
                 <div class="col-sm-6">
-                  <input type="text" readonly class="form-control-plaintext" id="inputPosition" value="{{ $Nurse->position }}" name="position">
+                  <input type="text" readonly class="form-control-plaintext" id="inputPhone" value="{{ $Nurse->phone_number }}" name="Phone">
                 </div>
               </div>
               <div class="form-group row">
@@ -128,7 +122,6 @@
             <p class="card-description">
               {{ $Nurse->phone_number }}
               <br>
-              1901023500098
             </p>
           </div>
         </div>
