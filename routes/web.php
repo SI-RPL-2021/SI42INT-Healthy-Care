@@ -37,12 +37,14 @@ Route::prefix('patient/')->group(function() {
     Route::post('update/{id}', [PatientController::class, 'update'])->name('patient.update');
     Route::post('appointment', [PatientController::class, 'appointment'])->name('patient.appointment');
     Route::get('schedule', [PatientController::class, 'schedule'])->name('patient.schedule');
+    Route::get('updateSchedule', [PatientController::class, 'updateSchedule'])->name('patient.updateSchedule');
     // Route::post('dynamic_dependent/fetch', [PatientController::class, 'fetch'])->name('dynamicdependent.fetch');
 });
 
 Route::prefix('nurse/')->group(function() {
     Route::get('dashboard', [NurseController::class, 'dashboard'])->name('nurse.dashboard');
     Route::get('profile', [NurseController::class, 'profile'])->name('nurse.profile');
+    Route::get('updateSchedule', [NurseController::class, 'updateSchedule'])->name('nurse.updateSchedule');
 });
 
 Route::prefix('admin/')->group(function() {
@@ -60,6 +62,8 @@ Route::prefix('admin/')->group(function() {
 
 Route::prefix('doctor/')->group(function() {
     Route::get('profile', [DoctorController::class, 'profile'])->name('doctor.profile');
+    Route::get('dashboard', [DoctorController::class, 'dashboard'])->name('doctor.dashboard');
+    Route::get('updateSchedule', [DoctorController::class, 'updateSchedule'])->name('doctor.updateSchedule');
 });
 // Test
 Route::get('/1', function () {
