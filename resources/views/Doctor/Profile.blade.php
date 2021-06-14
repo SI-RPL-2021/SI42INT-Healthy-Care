@@ -3,13 +3,13 @@
 <div class="sidebar-wrapper">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('doctor.dashboard') }}">
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
             </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('doctor.profile') }}">
                 <i class="material-icons">person</i>
                 <p>My Profile</p>
             </a>
@@ -18,12 +18,6 @@
             <a class="nav-link" href="">
                 <i class="material-icons">content_paste</i>
                 <p>Medical Record</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="material-icons">notifications</i>
-                <p>Notification</p>
             </a>
         </li>
     </ul>
@@ -111,7 +105,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="" class="btn btn-primary pull-right mt-3">Update Profile</a>
                             <div class="clearfix"></div>
                         </form>
                     </div>

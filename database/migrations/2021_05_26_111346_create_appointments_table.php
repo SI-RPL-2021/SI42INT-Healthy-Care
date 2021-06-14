@@ -24,8 +24,8 @@ class CreateAppointmentsTable extends Migration
             $table->enum('status', ['accepted', 'denied', 'processed', 'done'])->default('processed');
             $table->timestamps();
 
-            $table->foreign('doctor_id')->on('doctors')->references('id');
-            $table->foreign('patient_id')->on('patients')->references('id');
+            $table->foreign('doctor_id')->on('doctors')->references('user_id');
+            $table->foreign('patient_id')->on('patients')->references('user_id');
         });
     }
 

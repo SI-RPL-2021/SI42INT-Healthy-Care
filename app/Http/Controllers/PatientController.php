@@ -36,7 +36,6 @@ class PatientController extends Controller
 
     public function profile() 
     {
-        error_log('1');
         $id = Session::get('id');
         $data = Patient::where('user_id', $id)->first();
         $data2 = User::find($id);
@@ -89,15 +88,10 @@ class PatientController extends Controller
         //     'Message' => 'required'
         // ]);
         // error_log('test');
-     
-        error_log('test');
         
-
         $id = Session::get('id');
         $user = User::where('id', $id)->first();
-        error_log('test1');
-        error_log($user->id);
-        error_log($request->Date);
+
         $appointment = Appointment::create([
             'doctor_id' => $request->Doctor,
             'patient_id' => $user->id,
@@ -106,18 +100,29 @@ class PatientController extends Controller
             'phone_number' => $request->Phone,
             'message' => $request->Message
         ]);
-        error_log('test2');
         $save = $appointment->save();
-        error_log('test3');
+
         if($save) {
-            return redirect()->route('patient.profile')->with(['success1' => 'Account has been created successfully']);;
+            return redirect()->back()->with(['success1' => 'Account has been created successfully']);;
         } else {
             return redirect()->back()->with(['failed' => 'account was not created successfully']);
         }
     }
 
     public function schedule() {
-        $schedule = Appointment::all();
+        $id = Session::get('id');
+        $data = Patient::whereUserId($id)->first();
+        $schedule = Appointment::wherePatientId($data["user_id"])->get();
+        error_log($data["user_id"]);
+        error_log($schedule);
         return view('Patient.schedule', ['schedule' => $schedule]);
+    }
+
+    public function updateSchedule(Request $request) {
+        $id = $request->input('id');
+        $appointment = Appointment::where('id', $id)->first();
+
+        $appointment->delete();
+        return redirect()->back()->with(['success' => 'Schedule has been updated successfully']);
     }
 }

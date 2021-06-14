@@ -24,4 +24,23 @@ class NurseController extends Controller
         error_log(Session::get('id'));
         return view('Nurse.profile', ['Nurse' => $data, 'Nurse2' => $data2]);
     }
+
+    public function updateSchedule(Request $request) {
+        $id = $request->input('id');
+        $action = $request->input('action');
+        $appointment = Appointment::where('id', $id)->first();
+
+        if($action == 'accept') {
+            $appointment->status = 'accepted';
+        } else {
+            $appointment->status = 'denied';
+        }
+        $save = $appointment->save();
+
+        if($save) {
+            return redirect()->back()->with(['success' => 'Schedule has been updated successfully']);;
+        } else {
+            return redirect()->back()->with(['failed' => 'Schedule was not updated successfully']);
+        }
+    }
 }
