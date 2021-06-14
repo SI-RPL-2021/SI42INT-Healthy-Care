@@ -3,7 +3,7 @@
 <div class="sidebar-wrapper">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('doctor.dashboard') }}">
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
             </a>
@@ -15,15 +15,9 @@
             </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('doctor.record') }}">
                 <i class="material-icons">content_paste</i>
                 <p>Medical Record</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="material-icons">notifications</i>
-                <p>Notification</p>
             </a>
         </li>
     </ul>
@@ -36,26 +30,6 @@
 
 <!-- Content Start Here -->
 @section('content')
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <i class="material-icons">close</i>
-    </button>
-    <span>
-        <strong>{{ $message }}</strong>    
-    </span>
-</div>
-@elseif ($message = Session::get('failed'))
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <i class="material-icons">close</i>
-        </button>
-        <span>
-            <strong>{{ $message }}</strong>    
-        </span>
-    </div>
-@endif
-
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -66,46 +40,31 @@
                             <h4 class="card-title">Medical Records</h4>
                             <p class="card-category">Records list</p>
                         </div>
-                        <div class="col-md-6 d-flex justify-content-end">
-                            <a href=" " class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="material-icons">add</i>
-                                </span>
-                                <span class="text">Tambah Data Baru</span>
-                            </a>
-                        </div>
                     </div>
                     <div class="card-body">
                         <table id="example" class="table table-striped content-centered" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>No.</th>
+                                    <th>ID Pasien</th>
                                     <th>Nama Pasien</th>
-                                    <th>Nama Dokter</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                <?php $i=1; ?>
+                                @foreach ($data as $datas)
                                 <tr>
-                                    <td>1202183328</td>
-                                    <td>Nadya Zahra</td>
-                                    <td>Nadya Zahra</td>
-                                    <td><a href=" " class="btn btn-danger btn-icon-split ml-2">
-                                            <span class="icon text-white-50">
-                                                <i class="material-icons">clear</i>
-                                            </span>
-                                            <span class="text">Delete</span>
-                                        </a>
-                                        <a href=" " class="btn btn-primary btn-icon-split ml-2">
-                                            <span class="icon text-white-50">
-                                                <i class="material-icons">edit</i>
-                                            </span>
-                                            <span class="text">Edit</span>
-                                        </a>
-                                    </td>
+                                    <td>{{ $i }}</td>
+                                    <td>{{ $datas->user_id }}</td>
+                                    <td>{{ $datas->full_name}}</td>
+                                    {{-- medicalRecord?id={{$id}} --}}
+                                    <td><a href="" class="btn btn-primary btn-icon-split ml-2">
+                                        <span class="text">Detail</span>
+                                    </a></td>
                                 </tr>
-                                
+                                <?php $i++; ?>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
