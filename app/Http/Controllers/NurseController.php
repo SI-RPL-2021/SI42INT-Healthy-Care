@@ -43,4 +43,10 @@ class NurseController extends Controller
             return redirect()->back()->with(['failed' => 'Schedule was not updated successfully']);
         }
     }
+
+    public function record() {
+        $data = Patient::all();
+        error_log($data);
+        return view('Doctor.records', ['data' => $data]);
+    }
 }
