@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('nurse.record') }}">
           <i class="material-icons">assignment</i>
           <p>Medical Record</p>
         </a>
@@ -68,6 +68,7 @@
                             {{-- <td>{{ $data->doctor->full_name }}</td> --}}
                             {{-- <td>{{ $data->patient->full_name }}</td> --}}
                             <td>{{ $data->status }}</td>
+                          @if ($data->status == "processed")
                             <td>
                               <a href="updateSchedule?id={{$id}}&action=accept" class="btn btn-primary btn-icon-split ml-2">
                                 <span class="text">Accept</span>
@@ -76,6 +77,9 @@
                                 <span class="text">Deny</span>
                               </a>
                             </td>
+                          @else
+                            <td></td>
+                          @endif
                         </tr>
                     @endforeach
                 </tbody>

@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('nurse.record') }}">
           <i class="material-icons">assignment</i>
           <p>Medical Record</p>
         </a>

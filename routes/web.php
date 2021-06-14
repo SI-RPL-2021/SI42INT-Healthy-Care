@@ -45,6 +45,7 @@ Route::prefix('nurse/')->group(function() {
     Route::get('dashboard', [NurseController::class, 'dashboard'])->name('nurse.dashboard');
     Route::get('profile', [NurseController::class, 'profile'])->name('nurse.profile');
     Route::get('updateSchedule', [NurseController::class, 'updateSchedule'])->name('nurse.updateSchedule');
+    Route::get('record', [NurseController::class, 'record'])->name('nurse.record');
 });
 
 Route::prefix('admin/')->group(function() {
@@ -63,12 +64,13 @@ Route::prefix('admin/')->group(function() {
 Route::prefix('doctor/')->group(function() {
     Route::get('profile', [DoctorController::class, 'profile'])->name('doctor.profile');
     Route::get('dashboard', [DoctorController::class, 'dashboard'])->name('doctor.dashboard');
-    Route::get('updateSchedule', [DoctorController::class, 'updateSchedule'])->name('doctor.updateSchedule');
+    Route::get('checkUp', [DoctorController::class, 'checkUp'])->name('doctor.checkUp');
+    Route::post('medicalRecord', [DoctorController::class, 'medicalRecord'])->name('doctor.medicalRecord');
+    Route::get('record', [DoctorController::class, 'record'])->name('doctor.record');
 });
 // Test
 Route::get('/1', function () {
-    return view('Nurse.inpatientRoom');
+    return view('Doctor.records');
 });
 
 Route::get('/2', [RegisterController::class, 'example']);
-

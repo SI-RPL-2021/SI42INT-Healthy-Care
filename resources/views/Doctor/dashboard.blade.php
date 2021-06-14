@@ -2,8 +2,8 @@
 @section('sidebar')
 <div class="sidebar-wrapper">
     <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link active" href="{{ route('doctor.dashboard') }}">
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('doctor.dashboard') }}">
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
             </a>
@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('doctor.record') }}">
                 <i class="material-icons">content_paste</i>
                 <p>Medical Record</p>
             </a>
@@ -61,8 +61,8 @@
                                 <td></td>
                                 {{-- <td>{{ $datas->patient->full_name }}</td> --}}
                                 <td>{{ $datas["status"] }}</td>
-                                <td><a href="updateSchedule?id={{$id}}" class="btn btn-primary btn-icon-split ml-2">
-                                    <span class="text">Done</span>
+                                <td><a href="checkUp?id={{$id}}" class="btn btn-primary btn-icon-split ml-2">
+                                    <span class="text">CheckUp</span>
                                 </a></td>
                             </tr>
                         @endforeach

@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('nurse.record') }}">
           <i class="material-icons">assignment</i>
           <p>Medical Record</p>
         </a>
@@ -36,52 +36,48 @@
 
 @section('content')
 <!-- Content Start Here -->
-<div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header card-header-info">
-          <h4 class="card-title">Medical Records</h4>
-          <p class="card-category"></p>
-        </div>
-        <div class="card-body">
-            <tbody>
-              <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nama Pasien</th>
-                        <th>Nama Dokter</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <tr>
-                            <td>1202183328</td>
-                            <td>Nadya Zahra</td>
-                            <td>Nadya Zahra</td>
-                            <td>
-                                <a class="btn btn-info" href=" {{ view('Nurse/medicalRecords') }}">Detail</a>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1202183328</td>
-                            <td>Nadya Zahra</td>
-                            <td>Nadya Zahra</td>
-                            <td>
-                                <a class="btn btn-info" href=" ">Detail</a>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                    
-                </tbody>
-            </table>
-            </tbody>
-        </table>
-       </div>
+<div class="content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-primary row">
+                      <div class="col-md-6">
+                          <h4 class="card-title">Medical Records</h4>
+                          <p class="card-category">Records list</p>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <table id="example" class="table table-striped content-centered" style="width:100%">
+                          <thead>
+                              <tr>
+                                  <th>No.</th>
+                                  <th>ID Pasien</th>
+                                  <th>Nama Pasien</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php $i=1; ?>
+                              @foreach ($data as $datas)
+                              <tr>
+                                  <td>{{ $i }}</td>
+                                  <td>{{ $datas->user_id }}</td>
+                                  <td>{{ $datas->full_name}}</td>
+                                  {{-- medicalRecord?id={{$id}} --}}
+                                  <td><a href="" class="btn btn-primary btn-icon-split ml-2">
+                                      <span class="text">Detail</span>
+                                  </a></td>
+                              </tr>
+                              <?php $i++; ?>
+                              @endforeach
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
+</div>
 <!-- Content Ends Here -->
 @endsection

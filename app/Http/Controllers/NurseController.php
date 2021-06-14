@@ -6,6 +6,7 @@ use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Nurse;
+use App\Models\Patient;
 use App\Models\User;
 
 class NurseController extends Controller
@@ -42,5 +43,11 @@ class NurseController extends Controller
         } else {
             return redirect()->back()->with(['failed' => 'Schedule was not updated successfully']);
         }
+    }
+
+    public function record() {
+        $data = Patient::all();
+        error_log($data);
+        return view('Nurse.records', ['data' => $data]);
     }
 }
