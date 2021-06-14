@@ -46,7 +46,7 @@
           <div class="card-body">
           
             <form class="form" enctype="multipart/form-data">
-            @csrf
+              @csrf
 
               <div class="form-group row">
                 <label for="tgl_review" class="col-sm-3 col-form-label">Tanggal Review</label>
