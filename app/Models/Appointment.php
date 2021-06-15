@@ -18,7 +18,7 @@ class Appointment extends Model
     protected $guarded = [];
 
     public function doctor() {
-        return $this->belongsTo(Doctor::class);
+        return $this->hasOne(Doctor::class);
     }
 
     public function patient() {

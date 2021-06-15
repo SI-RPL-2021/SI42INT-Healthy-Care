@@ -61,6 +61,7 @@
                         <table id="example" class="table table-striped content-centered" style="width:100%">
                             <thead>
                                 <tr>
+                                    <th>ID transaction</th>
                                     <th>ID pasien</th>
                                     <th>ID docter</th>
                                     <th>ID medical record</th>
@@ -71,6 +72,7 @@
                             <tbody>
                                 @foreach ($transaction as $data)
                                 <tr>
+                                    <td>{{ $data->id }}</td>
                                     <td>{{ $data->patient_id }}</td>
                                     <td>{{ $data->doctor_id }}</td>
                                     <td>{{ $data->medical_record_id }}</td>

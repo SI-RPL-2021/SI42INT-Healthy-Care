@@ -10,6 +10,7 @@ use App\Models\Doctor;
 use App\Models\Medical_record;
 use App\Models\User;
 use App\Models\Patient;
+use App\Models\Transaction;
 
 class DoctorController extends Controller
 {
@@ -45,6 +46,7 @@ class DoctorController extends Controller
             'Riwayat_pengobatan' => 'required',
             'Riwayat_penyakit' => 'required',
             'Condition' => 'required',
+            'Drug' => 'required',
         ];
         $message = [
             'Age.required' => 'Age is required',
@@ -54,6 +56,7 @@ class DoctorController extends Controller
             'Riwayat_pengobatan.required' => 'Riwayat_pengobatan is required',
             'Riwayat_penyakit.required' => 'Riwayat_penyakit is required',
             'Condition.required' => 'Condition is required',
+            'Drug.required' => 'Resep obat is required'
         ];
 
         $validator = Validator::make($request->all(), $rules, $message);
@@ -76,6 +79,16 @@ class DoctorController extends Controller
         $record->save();
 
         $appointment = Appointment::where('patient_id', $request->Id)->first();
+        $medical_record = Medical_record::where('patient_id', $request->Id)->first();
+
+        $drug = Transaction::create([
+            'patient_id' => $request->Id,
+            'doctor_id' => $appointment->doctor_id,
+            'medical_record_id' => $medical_record->id,
+            'drugs' => $request->Drug,
+            'price' => 60000
+        ]);
+        $drug->save();
 
         error_log($appointment->status);
         $appointment->status = 'done';

@@ -112,7 +112,7 @@ class PatientController extends Controller
     public function schedule() {
         $id = Session::get('id');
         $data = Patient::whereUserId($id)->first();
-        $schedule = Appointment::wherePatientId($data["user_id"])->get();
+        $schedule = Appointment::where('patient_id', $data["user_id"])->get();
         error_log($data["user_id"]);
         error_log($schedule);
         return view('Patient.schedule', ['schedule' => $schedule]);

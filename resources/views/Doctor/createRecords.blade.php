@@ -152,6 +152,19 @@
               </div>
             </div>
           </div>
+          <div class="row mt-2">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="Drug" class="bmd-label-floating ml-2">Resep Obat</label>
+                <textarea class="form-control @error('Drug') is-invalid @enderror" id="inputDrug" name="Drug" cols="30" rows="5"></textarea>
+                @error('Drug')
+                <div class="invalid-feedback">
+                  {{ $message }}
+                </div>
+                @enderror
+              </div>
+            </div>
+          </div>
           <button type="submit" value="submit" class="btn btn-primary btn-md">SAVE</button>
           <a href="{{ route('doctor.dashboard') }}" class="btn btn-danger btn-md">CANCEL</a>
         </form>
