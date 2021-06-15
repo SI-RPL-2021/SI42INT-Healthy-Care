@@ -90,7 +90,6 @@ class DoctorController extends Controller
 
     public function record() {
         $data = Patient::all();
-        error_log($data);
         return view('Doctor.records', ['data' => $data]);
     }
 }

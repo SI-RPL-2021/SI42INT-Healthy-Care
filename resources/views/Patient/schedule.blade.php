@@ -25,7 +25,7 @@
                                         <td>{{ $data->date }}</td>
                                         <td>{{ $data->time }}</td>
                                         <td></td>
-                                        {{-- <td>{{ $data->doctor->full_name }}</td> --}}
+                                        <td>{{ $data->doctor->full_name }}</td>
                                         <td>{{ $data->status }}</td>
                                         <td><a href="updateSchedule?id={{$id}}" class="btn btn-danger btn-icon-split ml-2">
                                             <span class="text">Cancel</span>

@@ -58,7 +58,7 @@
                             <i class="material-icons">library_books</i>
                         </div>
                         <p class="card-category">Total Transctions</p>
-                        <h1 class="card-title m-2"></h1>
+                        <h1 class="card-title m-2">{{ $count2 }}</h1>
                     </div>
                     <div class="card-footer"></div>
                 </div>

@@ -9,13 +9,15 @@ use App\Models\Admin;
 use App\Models\Doctor;
 use App\Models\Nurse;
 use App\Models\Patient;
+use App\Models\Transaction;
 use App\Models\User;
 
 class AdminController extends Controller
 {
     public function dashboard() {
         $count = User::all()->count();
-        return view('Admin.dashboard', compact('count'));
+        $count2 = Transaction::all()->count();
+        return view('Admin.dashboard', compact('count', 'count2'));
     }
 
     public function userManagement() {
@@ -187,7 +189,9 @@ class AdminController extends Controller
     }
 
     public function history() {
-        return view('Admin\history');
+        $count = Transaction::all()->count();
+        $transaction = Transaction::all();
+        return view('Admin\history', compact('count'), ['transaction' => $transaction]);
     }
 
     public function editAccountPage($id) 
@@ -337,5 +341,11 @@ class AdminController extends Controller
             return redirect()->route('admin.userManagement')->with(['success' => 'Data has been deleted']);    
         }
         return redirect()->back()->with(['failed' => 'Data is not deleted']);    
+    }
+
+    public function deleteTransaction($id) {
+        $transaction = Transaction::find($id);
+        $transaction->delete();
+        return redirect()->route('admin.history')->with(['success' => 'Data has been deleted']);    
     }
 }

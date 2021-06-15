@@ -59,6 +59,7 @@ Route::prefix('admin/')->group(function() {
     Route::get('editAccount/{id}', [AdminController::class, 'editAccountPage'])->name('admin.editAccountPage');
     Route::post('updateAccount/{id}', [AdminController::class, 'updateAccount'])->name('admin.updateAccount');
     Route::get('account/delete/{id}', [AdminController::class, 'deleteAccount'])->name('admin.deleteAccount');
+    Route::get('transaction/delete/{id}', [AdminController::class, 'deleteTransaction'])->name('admin.deleteTransaction');
 });
 
 Route::prefix('doctor/')->group(function() {

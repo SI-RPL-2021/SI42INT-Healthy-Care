@@ -18,7 +18,13 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('patient_id');
             $table->unsignedBigInteger('doctor_id');
             $table->unsignedBigInteger('medical_record_id');
+            $table->text('drugs');
+            $table->string('price');
             $table->timestamps();
+
+            $table->foreign('patient_id')->on('patients')->references('user_id');
+            $table->foreign('doctor_id')->on('doctors')->references('user_id');
+            $table->foreign('medical_record_id')->on('medical_records')->references('id');
         });
     }
 

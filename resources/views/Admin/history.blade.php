@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{ route('admin.history') }}">
                 <i class="material-icons">library_books</i>
                 <p>History Transaction</p>
             </a>
@@ -43,7 +43,7 @@
                 <i class="material-icons">library_books</i>
             </div>
             <p class="card-category">Total Transactions</p>
-            <h1 class="card-title m-2"></h1>
+            <h1 class="card-title m-2">{{ $count }}</h1>
         </div>
         <div class="card-footer"></div>
     </div>
@@ -61,37 +61,29 @@
                         <table id="example" class="table table-striped content-centered" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Username</th>
-                                    {{-- <th>Email</th>
-                                    <th>Role</th> --}}
-                                    <th>Create at</th>
-                                    <th>Update at</th>
+                                    <th>ID pasien</th>
+                                    <th>ID docter</th>
+                                    <th>ID medical record</th>
+                                    <th>Total Price</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($account as $data)
+                                @foreach ($transaction as $data)
                                 <tr>
-                                    <td>{{ $data->username }}</td>
-                                    <td>{{ $data->email }}</td>
-                                    <td>{{ $data->role }}</td>
-                                    <td>{{ $data->created_at }}</td>
-                                    <td>{{ $data->updated_at }}</td>
-                                    <td><a href="account/delete/{{ $data->id }}" class="btn btn-danger btn-icon-split ml-2">
+                                    <td>{{ $data->patient_id }}</td>
+                                    <td>{{ $data->doctor_id }}</td>
+                                    <td>{{ $data->medical_record_id }}</td>
+                                    <td>Rp. {{ $data->price }}</td>
+                                    <td><a href="transaction/delete/{{ $data->id }}" class="btn btn-danger btn-icon-split ml-2">
                                             <span class="icon text-white-50">
                                                 <i class="fas fa-trash"></i>
                                             </span>
                                             <span class="text">Delete</span>
                                         </a>
-                                        <a href="" class="btn btn-primary btn-icon-split ml-2">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-pen"></i>
-                                            </span>
-                                            <span class="text">Edit</span>
-                                        </a>
                                     </td>
                                 </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
