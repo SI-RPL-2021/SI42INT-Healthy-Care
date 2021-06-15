@@ -66,9 +66,9 @@ class PatientController extends Controller
         $user->email     = $request->Email;
         $save = $user->save();
 
-        $patient->full_name     = $request->Fullname;
+        $patient->full_name    = $request->Fullname;
         $patient->phone_number = $request->Phone;
-        $patient->gender       = $request->Gender;
+        $patient->gender       = "male";
         $patient->address      = $request->Address;
         $save = $patient->save();
 
